@@ -8,12 +8,13 @@
 		width: fit-content;
 		.char {
 			display: inline;
+			position: relative;
 		}
 		.up {
-			z-index: 1;
+			z-index: 3;
 		}
 		.down {
-			z-index: -1;
+			z-index: 0;
 		}
 		&:hover {
 			position: relative;
@@ -22,7 +23,7 @@
 				top: 50%;
 				z-index: 2;
 				transform: translateY(-50%);
-				height: 20px;
+				height: 15px;
 				display: block;
 				background-color: var(--primary);
 				animation: navBarAnim 0.7s ease forwards;
@@ -44,31 +45,19 @@
 	import { onMount } from "svelte";
 
 	export let label: string;
-
-	const characters: string[] = [];
-
-	onMount(() => {
-		for (var i = 0; i < label.length; i++) {
-			characters.push(label[i]);
-		}
-		console.log(characters);
-	});
 </script>
 
 <span>
-	<!-- {#each characters as character, i}
-    
-    {#if i % 2 == 0}
-        <div class="char up">
-            {character}
-        </div>
-    {:else}
-        <div class="char down">
-            {character}
-        </div>
-    {/if}
-
-    {/each} -->
-	{label}
+	{#each Array(label.length) as _, i}
+		{#if i % 2 === 0}
+			<div class="char up">
+				{label[i]}
+			</div>
+		{:else}
+			<div class="char down">
+				{label[i]}
+			</div>
+		{/if}
+	{/each}
 	<span></span>
 </span>
