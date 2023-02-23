@@ -8,16 +8,18 @@
 		color: white;
 	}
 
-	section {
-		scroll-snap-align: center;
-	}
-
 	div {
 		display: flex;
 		width: 100%;
 		height: 100%;
 		justify-content: center;
 		align-items: center;
+		scroll-snap-align: center;
+	}
+
+	.first {
+		height: auto;
+		margin-top: 100%;
 	}
 </style>
 
@@ -28,11 +30,7 @@
 
 <main>
 	<Section>
-		<div class="first">
-			<h1>
-				Apratim is here.
-			</h1>
-		</div>
+		<h1>Apratim is here.</h1>
 	</Section>
 	<Section>
 		<div class="second"></div>
