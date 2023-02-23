@@ -6,7 +6,6 @@
 		flex-direction: column;
 		scroll-snap-type: y mandatory;
 		color: #fff;
-	}
 </style>
 
 <script lang="ts">
