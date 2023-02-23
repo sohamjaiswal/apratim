@@ -8,36 +8,45 @@
 		color: #fff;
 	}
 
-	// div {
-	// 	display: flex;
-	// 	width: 100%;
-	// 	height: 100%;
-	// 	justify-content: center;
-	// 	align-items: center;
-	// 	scroll-snap-align: center;
-	// }
+	section {
+		scroll-snap-align: center;
+	}
 
-	.fore {
+	.centered {
 		position: absolute;
-		z-index: 2;
-		top: 50%; left: 50%;
+		top: 50%;
+		left: 50%;
 		transform: translateX(-50%) translateY(-50%);
+	}
+	.back {
+		z-index: 1;
+	}
+	.fore {
+		z-index: 2;
+		h1 {
+			font-size: 6rem;
+			text-align: center;
+			text-shadow: 0 0 5px black;
+		}
 	}
 </style>
 
 <!-- Landing Page 🤌 -->
 <script lang="ts">
 	import Section from "$lib/components/ui/Section/Section.svelte";
+	import logo from "$lib/assets/logo.png"
 </script>
 
 <main>
 	<Section>
-		<div class="back">
-			
-		</div>
-		<div class="fore">
-			<h1>Apratim is here.</h1>
-		</div>
+		<section>
+			<div class="centered back">
+				<img src={logo} alt="Apratim logo" />
+			</div>
+			<div class="centered fore">
+				<h1>Apratim is here</h1>
+			</div>
+		</section>
 	</Section>
 	<Section>
 		<div class="second"></div>
