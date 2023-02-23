@@ -8,23 +8,20 @@
 		color: #fff;
 	}
 
-	section {
-		scroll-snap-align: center;
-		color: #fff;
-	}
+	// div {
+	// 	display: flex;
+	// 	width: 100%;
+	// 	height: 100%;
+	// 	justify-content: center;
+	// 	align-items: center;
+	// 	scroll-snap-align: center;
+	// }
 
-	div {
-		display: flex;
-		width: 100%;
-		height: 100%;
-		justify-content: center;
-		align-items: center;
-		scroll-snap-align: center;
-	}
-
-	.first {
-		height: auto;
-		margin-top: 100%;
+	.fore {
+		position: absolute;
+		z-index: 2;
+		top: 50%; left: 50%;
+		transform: translateX(-50%) translateY(-50%);
 	}
 </style>
 
@@ -35,7 +32,12 @@
 
 <main>
 	<Section>
-		<h1>Apratim is here.</h1>
+		<div class="back">
+			
+		</div>
+		<div class="fore">
+			<h1>Apratim is here.</h1>
+		</div>
 	</Section>
 	<Section>
 		<div class="second"></div>
