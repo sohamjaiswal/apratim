@@ -10,7 +10,7 @@
 		left: 50%;
 		transform: translateX(-50%) translateY(-50%);
 
-		font-size: 3rem;
+		font-size: 2.5rem;
 		text-align: center;
 		text-shadow: 0 0 5px black;
 	}
@@ -20,6 +20,12 @@
 		top: 50%;
 		left: 50%;
 		transform: translateX(-50%) translateY(-50%);
+		width: 60%;
+	}
+
+	.logo {
+		aspect-ratio: 1;
+		width: 100%;
 	}
 </style>
 
@@ -35,7 +41,7 @@
 	<Section>
 		<div class="sect1">
 			<div class="back">
-				<img src="{logo}" alt="apratim logo" />
+				<img class="logo" src="{logo}" alt="apratim logo" />
 			</div>
 			<div class="fore">
 				<h1>Apratim is here.</h1>

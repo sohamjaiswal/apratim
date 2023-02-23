@@ -1,6 +1,6 @@
 <style lang="scss">
 	main {
-		width: 100%;
+		width: 100vw;
 		height: fit-content;
 		display: flex;
 		flex-direction: column;
@@ -10,7 +10,7 @@
 	}
 
 	#blob {
-		background: linear-gradient(to right, aquamarine, mediumpurple);
+		background: linear-gradient(to right, rgb(255, 85, 0), rgb(255, 63, 95));
 		height: 500px;
 		aspect-ratio: 1;
 		position: absolute;
@@ -35,18 +35,23 @@
 			rotate: 360deg;
 		}
 	}
+
+	@media (pointer: coarse) {
+		#blob {
+			display: none;
+		}
+	}
 </style>
 
 <script lang="ts">
-	import { onMount } from "svelte";
-
 	let m = { x: 0, y: 0 };
+	let p = { x: 0, y: 0 };
 
 	let blob: HTMLElement;
 
 	const handleMouseMove = (event: MouseEvent) => {
-		m.x = event.clientX;
-		m.y = event.clientY;
+		m.x = event.pageX;
+		m.y = event.pageY;
 
 		blob.animate(
 			{

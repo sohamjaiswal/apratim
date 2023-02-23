@@ -4,6 +4,7 @@
 		min-height: 100vh;
 		max-height: fit-content;
 		scroll-snap-align: center;
+		overflow-x: hidden;
 	}
 </style>
 
