@@ -1,39 +1,4 @@
-
-<!-- Landing Page 🤌 -->
-
-<script lang="ts">
-	import Section from "$lib/components/ui/Section/Section.svelte";
-
-
-
-
-</script>
-
-<main>
-	<Section>
-		<div class="first">
-			Apratim is here.
-		</div>
-	</Section>
-	<Section>
-		<div class="second">
-	
-		</div>
-	</Section>
-	<Section>
-		<div class="third">
-		
-		</div>
-	</Section>
-	<Section>
-		<div class="fourth">
-	
-		</div>
-	</Section>
-</main>
-
 <style lang="scss">
-
 	main {
 		width: 100%;
 		height: fit-content;
@@ -55,3 +20,27 @@
 		align-items: center;
 	}
 </style>
+
+<!-- Landing Page 🤌 -->
+<script lang="ts">
+	import Section from "$lib/components/ui/Section/Section.svelte";
+</script>
+
+<main>
+	<Section>
+		<div class="first">
+			<h1>
+				Apratim is here.
+			</h1>
+		</div>
+	</Section>
+	<Section>
+		<div class="second"></div>
+	</Section>
+	<Section>
+		<div class="third"></div>
+	</Section>
+	<Section>
+		<div class="fourth"></div>
+	</Section>
+</main>
