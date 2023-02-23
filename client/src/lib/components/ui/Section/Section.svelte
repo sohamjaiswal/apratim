@@ -3,7 +3,9 @@
 		width: 100%;
 		min-height: 100vh;
 		max-height: fit-content;
-		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 </style>
 
