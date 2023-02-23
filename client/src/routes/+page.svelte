@@ -1,11 +1,3 @@
-<!-- Landing Page 🤌 -->
-<script lang="ts">
-	import Section from "$lib/components/ui/Section/Section.svelte";
-	import Page from "$lib/components/fragments/Page/Page.svelte";
-
-	import logo from '$lib/assets/logo.png'
-</script>
-
 <style lang="scss">
 	.sect1 {
 		display: flex;
@@ -29,15 +21,21 @@
 		left: 50%;
 		transform: translateX(-50%) translateY(-50%);
 	}
-
-
 </style>
+
+<!-- Landing Page 🤌 -->
+<script lang="ts">
+	import Section from "$lib/components/ui/Section/Section.svelte";
+	import Page from "$lib/components/fragments/Page/Page.svelte";
+
+	import logo from "$lib/assets/logo.png";
+</script>
 
 <Page>
 	<Section>
 		<div class="sect1">
 			<div class="back">
-				<img src={logo} alt="apratim logo" />
+				<img src="{logo}" alt="apratim logo" />
 			</div>
 			<div class="fore">
 				<h1>Apratim is here.</h1>
