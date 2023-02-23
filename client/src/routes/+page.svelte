@@ -1,12 +1,57 @@
-<script lang="ts">
-	import { Button } from "$lib/components/ui";
-	import { redirect } from "@sveltejs/kit";
 
-	const goToLogin = () => {
-		window.location.pathname = "/login";
-	};
+<!-- Landing Page 🤌 -->
+
+<script lang="ts">
+	import Section from "$lib/components/ui/Section/Section.svelte";
+
+
+
+
 </script>
 
-<h1>Welcome to SveltePress!</h1>
+<main>
+	<Section>
+		<div class="first">
+			Apratim is here.
+		</div>
+	</Section>
+	<Section>
+		<div class="second">
+	
+		</div>
+	</Section>
+	<Section>
+		<div class="third">
+		
+		</div>
+	</Section>
+	<Section>
+		<div class="fourth">
+	
+		</div>
+	</Section>
+</main>
 
-<Button label="login" variant="primary" onClick="{goToLogin}" />
+<style lang="scss">
+
+	main {
+		width: 100%;
+		height: fit-content;
+		display: flex;
+		flex-direction: column;
+		scroll-snap-type: y mandatory;
+		color: white;
+	}
+
+	section {
+		scroll-snap-align: center;
+	}
+
+	div {
+		display: flex;
+		width: 100%;
+		height: 100%;
+		justify-content: center;
+		align-items: center;
+	}
+</style>
