@@ -54,24 +54,7 @@
 					align-items: flex-end;
 					& > a {
 						text-decoration: none;
-						color: #000;
-						font-family: var(--nav-font);
-						font-size: 5rem;
-						font-weight: 800;
-						width: fit-content;
-						&:hover {
-							position: relative;
-							& > span {
-								position: absolute;
-								top: 50%;
-								z-index: 2;
-								transform: translateY(-50%);
-								height: 20px;
-								display: block;
-								background-color: var(--primary);
-								animation: navBarAnim 0.7s ease forwards;
-							}
-						}
+						cursor: pointer;
 					}
 				}
 			}
@@ -89,6 +72,8 @@
 </style>
 
 <script lang="ts">
+	import StrikethroughText from "../../ui/StrikethroughText/StrikethroughText.svelte";
+
 	let links;
 </script>
 
@@ -103,32 +88,25 @@
 	<div class="overlay">
 		<nav class="links" bind:this="{links}">
 			<a href="/">
-				Home
-				<span></span>
+				<StrikethroughText label="Home" />
 			</a>
 			<a href="/events">
-				Events
-				<span></span>
+				<StrikethroughText label="Events" />
 			</a>
 			<a href="/schedule">
-				Schedule
-				<span></span>
+				<StrikethroughText label="Schedule" />
 			</a>
 			<a href="/clubs">
-				Clubs
-				<span></span>
+				<StrikethroughText label="Clubs" />
 			</a>
-			<a href="/organizingTeam">
-				Organizing Team
-				<span></span>
+			<a href="/organizingTeams">
+				<StrikethroughText label="Organizing Teams" />
 			</a>
 			<a href="/faq">
-				FAQ
-				<span></span>
+				<StrikethroughText label="FAQ" />
 			</a>
 			<a href="/contact">
-				Contact Us
-				<span></span>
+				<StrikethroughText label="Contact Us" />
 			</a>
 		</nav>
 		<!-- 
