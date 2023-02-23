@@ -5,7 +5,12 @@
 		display: flex;
 		flex-direction: column;
 		scroll-snap-type: y mandatory;
-		color: white;
+		color: #fff;
+	}
+
+	section {
+		scroll-snap-align: center;
+		color: #fff;
 	}
 
 	div {
