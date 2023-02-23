@@ -3,11 +3,12 @@
 :root {
 	--header-font: "Poppins", sans-serif;
 	--body-font: "Poppins", sans-serif;
+	--nav-font: "Poppins", sans-serif;
 	--secondary: #3d3d3d;
 	--secondary-hover: #5d5d5d;
 	/* color for when the primary color is selected */
 	--secondary-alt: white;
-	--primary: rgb(255, 60, 93);
+	--primary: #a374ff;
 	--primary-hover: rgb(255, 109, 134);
 	/* color to contrast secondary on bg */
 	--primary-alt: white;
@@ -29,7 +30,7 @@
 	--secondary-hover: #5d5d5d;
 	/* color for when the primary color is selected */
 	--secondary-alt: white;
-	--primary: rgb(255, 60, 93);
+	--primary: #a374ff;
 	--primary-hover: rgb(255, 109, 134);
 	/* color to contrast secondary on bg */
 	--primary-alt: white;
@@ -66,6 +67,6 @@ body {
 	font-family: var(--body-font);
 	font-weight: 400;
 	color: var(--body-text);
-	background-color: #3d3d3d;
+	background-color: #1d1d1f;
 	overflow-x: hidden;
 }
