@@ -8,11 +8,6 @@
 		color: #fff;
 	}
 
-	section {
-		scroll-snap-align: center;
-		color: #fff;
-	}
-
 	div {
 		display: flex;
 		width: 100%;
