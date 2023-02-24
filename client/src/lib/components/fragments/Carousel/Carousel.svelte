@@ -56,6 +56,16 @@
 
 	let crsl: HTMLElement;
 
+	export let images: string[] = [
+		sampleImage,
+		sampleImage,
+		sampleImage,
+		sampleImage,
+		sampleImage,
+		sampleImage,
+		sampleImage
+	];
+
 	const handleScroll = () => {
 		crsl.scrollTo({ left: window.scrollY * 1.5, behavior: "smooth" });
 		// Changing perspective
@@ -71,46 +81,13 @@
 
 <section class="container">
 	<div class="crousel" bind:this="{crsl}">
-		<div class="image">
-			<div>
-				<img src="{sampleImage}" alt="Sample image" />
+		{#each images as image, i}
+			<div class="image">
+				<div>
+					<img src="{image}" alt="Sample" />
+				</div>
 			</div>
-		</div>
-		<div class="image">
-			<div>
-				<img src="{sampleImage}" alt="Sample image" />
-			</div>
-		</div>
-		<div class="image">
-			<div>
-				<img src="{sampleImage}" alt="Sample image" />
-			</div>
-		</div>
-		<div class="image">
-			<div>
-				<img src="{sampleImage}" alt="Sample image" />
-			</div>
-		</div>
-		<div class="image">
-			<div>
-				<img src="{sampleImage}" alt="Sample image" />
-			</div>
-		</div>
-		<div class="image">
-			<div>
-				<img src="{sampleImage}" alt="Sample image" />
-			</div>
-		</div>
-		<div class="image">
-			<div>
-				<img src="{sampleImage}" alt="Sample image" />
-			</div>
-		</div>
-		<div class="image">
-			<div>
-				<img src="{sampleImage}" alt="Sample image" />
-			</div>
-		</div>
+		{/each}
 	</div>
 </section>
 
