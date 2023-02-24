@@ -1,93 +1,76 @@
 <style lang="scss">
-	.container {
+	section {
+		height: 70vh;
 		width: 100vw;
-		height: 90vh;
-		display: flex;
-		align-items: center;
-		& > .crousel {
-			position: absolute;
-			left: -2vw;
+		overflow: hidden;
+		position: relative;
+		& > .image-track {
 			display: flex;
-			gap: 2.5vw;
-			width: 110vw;
-			height: 100%;
-			align-items: center;
-			transform: rotate(6deg);
-			overflow-x: scroll;
-			overflow-y: hidden;
-			&::-webkit-scrollbar {
-				display: none;
-			}
+			gap: 4vmin;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(0%, -50%);
+			user-select: none;
 			& > .image {
-				perspective: 100px;
-				transform-style: preserve-3d;
-				& > div {
-					& > img {
-						width: 650px;
-						height: 560px;
-						border-radius: 60px;
-					}
-				}
-				&:nth-child(1) {
-					// perspective-origin: right;
-					& > div {
-						transform: rotateY(2.5deg);
-					}
-				}
-				&:nth-child(2) {
-					& > div {
-						transform: scaleY(0.87);
-					}
-				}
-				&:nth-child(3) {
-					// perspective-origin: left;
-					& > div {
-						transform: rotateY(-2.5deg);
-					}
-				}
+				width: 55vmin;
+				height: 46vmin;
+				object-fit: cover;
+				object-position: center;
+				border-radius: 18px;
 			}
 		}
 	}
 </style>
 
 <script type="ts">
-	import sampleImage from "../../../assets/sample.webp";
+	import sampleImage from "$lib/assets/sample.webp";
 
-	let crsl: HTMLElement;
+	let track: any;
 
-	export let images: string[] = [
-		sampleImage,
-		sampleImage,
-		sampleImage,
-		sampleImage,
-		sampleImage,
-		sampleImage,
-		sampleImage
-	];
+	window.onmousedown = (e) => {
+		track.dataset.mouseDownAt = e.clientX;
+	};
+	window.onmousemove = (e) => {
+		if (track.dataset.mouseDownAt === "0") return;
+		const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+			maxDelta = window.innerWidth / 2;
+		const percentage = (mouseDelta / maxDelta) * -100,
+			nextPercentage = Math.max(
+				Math.min(parseFloat(track.dataset.prevPercentage) + percentage, 0),
+				-100
+			);
+		track.dataset.percentage = nextPercentage;
+		track.style.transform = `translate(${nextPercentage}%, -50%)`;
+		track.animate(
+			{
+				transform: `translate(${nextPercentage}%, -50%)`
+			},
+			{ duration: 1200, fill: "forwards" }
+		);
 
-	const handleScroll = () => {
-		crsl.scrollTo({ left: window.scrollY * 1.5, behavior: "smooth" });
-		// Changing perspective
-		// eslint-disable-next-line no-undef
-		Array.from(crsl.children as HTMLCollectionOf<HTMLElement>).forEach((elem) => {
-			(elem.firstElementChild as HTMLElement).style.transform = `rotateY(${
-				(-elem.getBoundingClientRect().x * 3) / 700 + 1
-			}deg)`;
-			console.log((elem.firstElementChild as HTMLElement).style.transform);
-		});
+		for (const image of track.getElementsByClassName("image")) {
+			image.animate(
+				{
+					objectPosition: `${100 + nextPercentage}% center`
+				},
+				{ duration: 1200, fill: "forwards" }
+			);
+		}
+	};
+	window.onmouseup = () => {
+		track.dataset.mouseDownAt = "0";
+		track.dataset.prevPercentage = track.dataset.percentage;
 	};
 </script>
 
-<section class="container">
-	<div class="crousel" bind:this="{crsl}">
-		{#each images as image, i}
-			<div class="image">
-				<div>
-					<img src="{image}" alt="Sample" />
-				</div>
-			</div>
-		{/each}
+<section>
+	<div class="image-track" bind:this="{track}" data-mouse-down-at="0" data-prev-percentage="0">
+		<img src="{sampleImage}" alt="" class="image" draggable="false" />
+		<img src="{sampleImage}" alt="" class="image" draggable="false" />
+		<img src="{sampleImage}" alt="" class="image" draggable="false" />
+		<img src="{sampleImage}" alt="" class="image" draggable="false" />
+		<img src="{sampleImage}" alt="" class="image" draggable="false" />
+		<img src="{sampleImage}" alt="" class="image" draggable="false" />
 	</div>
 </section>
-
-<svelte:window on:scroll="{handleScroll}" />
