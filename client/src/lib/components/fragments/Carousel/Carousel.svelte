@@ -90,4 +90,4 @@
 	</div>
 </section>
 
-<svelte:window on:wheel="{handleScroll}" />
+<svelte:window on:scroll="{handleScroll}" />
