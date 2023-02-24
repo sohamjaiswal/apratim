@@ -32,6 +32,7 @@
 <!-- Landing Page 🤌 -->
 <script lang="ts">
 	import Section from "$lib/components/ui/Section/Section.svelte";
+	import Carousel from "$lib/components/fragments/Carousel/Carousel.svelte";
 	import Page from "$lib/components/fragments/Page/Page.svelte";
 
 	import logo from "$lib/assets/logo.png";
@@ -49,7 +50,7 @@
 		</div>
 	</Section>
 	<Section>
-		<div class="second"></div>
+		<Carousel />
 	</Section>
 	<Section>
 		<div class="third"></div>

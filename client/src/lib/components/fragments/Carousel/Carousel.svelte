@@ -1,0 +1,122 @@
+<style lang="scss">
+	.container {
+		width: 100vw;
+		height: 90vh;
+		display: flex;
+		align-items: center;
+		& > .crousel {
+			position: absolute;
+			left: -2vw;
+			display: flex;
+			gap: 2.5vw;
+			width: 110vw;
+			height: 100%;
+			align-items: center;
+			transform: rotate(6deg);
+			overflow-x: scroll;
+			&::-webkit-scrollbar {
+				display: none;
+			}
+			& > .image {
+				perspective: 100px;
+				transform-style: preserve-3d;
+				& > div {
+					& > img {
+						width: 650px;
+						height: 560px;
+						border-radius: 60px;
+					}
+				}
+				&:nth-child(1) {
+					// perspective-origin: right;
+					& > div {
+						transform: rotateY(2.5deg);
+					}
+				}
+				&:nth-child(2) {
+					& > div {
+						transform: scaleY(0.87);
+					}
+				}
+				&:nth-child(3) {
+					// perspective-origin: left;
+					& > div {
+						transform: rotateY(-2.5deg);
+					}
+				}
+			}
+		}
+	}
+</style>
+
+<script type="ts">
+	import { onMount } from "svelte";
+	import sampleImage from "../../../assets/sample.webp";
+
+	let crsl: HTMLElement;
+	onMount(() => {
+		const scrollLeft = () => {
+			crsl.scrollTo({ left: window.scrollY * 1.5, behavior: "smooth" });
+			// Changing perspective
+			// eslint-disable-next-line no-undef
+			Array.from(crsl.children as HTMLCollectionOf<HTMLElement>).forEach((elem) => {
+				if (!elem) return;
+				(elem.firstElementChild as HTMLElement).style.transform = `rotateY(${
+					(-elem.getBoundingClientRect().x * 3) / 700 + 1
+				}deg)`;
+				console.log((elem.firstElementChild as HTMLElement).style.transform);
+			});
+			console.log("done");
+		};
+		if (window.addEventListener) {
+			window.addEventListener("wheel", scrollLeft, false);
+		} else {
+			console.log("No event listner.");
+		}
+	});
+</script>
+
+<section class="container">
+	<div class="crousel" bind:this="{crsl}">
+		<div class="image">
+			<div>
+				<img src="{sampleImage}" alt="Sample image" />
+			</div>
+		</div>
+		<div class="image">
+			<div>
+				<img src="{sampleImage}" alt="Sample image" />
+			</div>
+		</div>
+		<div class="image">
+			<div>
+				<img src="{sampleImage}" alt="Sample image" />
+			</div>
+		</div>
+		<div class="image">
+			<div>
+				<img src="{sampleImage}" alt="Sample image" />
+			</div>
+		</div>
+		<div class="image">
+			<div>
+				<img src="{sampleImage}" alt="Sample image" />
+			</div>
+		</div>
+		<div class="image">
+			<div>
+				<img src="{sampleImage}" alt="Sample image" />
+			</div>
+		</div>
+		<div class="image">
+			<div>
+				<img src="{sampleImage}" alt="Sample image" />
+			</div>
+		</div>
+		<div class="image">
+			<div>
+				<img src="{sampleImage}" alt="Sample image" />
+			</div>
+		</div>
+	</div>
+</section>
