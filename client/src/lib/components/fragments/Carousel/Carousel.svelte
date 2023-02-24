@@ -14,6 +14,7 @@
 			align-items: center;
 			transform: rotate(6deg);
 			overflow-x: scroll;
+			overflow-y: hidden;
 			&::-webkit-scrollbar {
 				display: none;
 			}
@@ -54,26 +55,18 @@
 	import sampleImage from "../../../assets/sample.webp";
 
 	let crsl: HTMLElement;
-	onMount(() => {
-		const scrollLeft = () => {
-			crsl.scrollTo({ left: window.scrollY * 1.5, behavior: "smooth" });
-			// Changing perspective
-			// eslint-disable-next-line no-undef
-			Array.from(crsl.children as HTMLCollectionOf<HTMLElement>).forEach((elem) => {
-				if (!elem) return;
-				(elem.firstElementChild as HTMLElement).style.transform = `rotateY(${
-					(-elem.getBoundingClientRect().x * 3) / 700 + 1
-				}deg)`;
-				console.log((elem.firstElementChild as HTMLElement).style.transform);
-			});
-			console.log("done");
-		};
-		if (window.addEventListener) {
-			window.addEventListener("wheel", scrollLeft, false);
-		} else {
-			console.log("No event listner.");
-		}
-	});
+
+	const handleScroll = () => {
+		crsl.scrollTo({ left: window.scrollY * 1.5, behavior: "smooth" });
+		// Changing perspective
+		// eslint-disable-next-line no-undef
+		Array.from(crsl.children as HTMLCollectionOf<HTMLElement>).forEach((elem) => {
+			(elem.firstElementChild as HTMLElement).style.transform = `rotateY(${
+				(-elem.getBoundingClientRect().x * 3) / 700 + 1
+			}deg)`;
+			console.log((elem.firstElementChild as HTMLElement).style.transform);
+		});
+	};
 </script>
 
 <section class="container">
@@ -120,3 +113,5 @@
 		</div>
 	</div>
 </section>
+
+<svelte:window on:wheel="{handleScroll}" />
