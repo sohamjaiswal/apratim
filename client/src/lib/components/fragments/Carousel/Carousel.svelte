@@ -51,7 +51,6 @@
 </style>
 
 <script type="ts">
-	import { onMount } from "svelte";
 	import sampleImage from "../../../assets/sample.webp";
 
 	let crsl: HTMLElement;
