@@ -7,6 +7,7 @@
 		scroll-snap-type: y mandatory;
 		color: #fff;
 		overflow-x: hidden;
+		scroll-behavior: smooth;
 	}
 
 	#blob {
@@ -20,6 +21,12 @@
 		border-radius: 50%;
 		animation: rotate 20s infinite;
 		filter: blur(200px);
+	}
+
+	.content {
+		> * {
+			scroll-snap-align: start;
+		}
 	}
 
 	@keyframes rotate {
@@ -65,5 +72,7 @@
 
 <main on:mousemove="{handleMouseMove}">
 	<div id="blob" bind:this="{blob}"></div>
-	<slot />
+	<div class="content">
+		<slot />
+	</div>
 </main>
