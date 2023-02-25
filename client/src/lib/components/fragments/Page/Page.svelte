@@ -30,7 +30,7 @@
 	}
 
 	.content {
-		margin-top: 48px;
+		margin-top: 130px;
 		padding-bottom: 48px;
 		> * {
 			scroll-snap-align: start;
@@ -76,6 +76,7 @@
 	let p = { x: 0, y: 0 };
 
 	import type { IPageProps } from '../../../types/page.types';
+	import EzBar from '../EZBar/EZBar.svelte';
 
 	 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 	 interface $$Props extends IPageProps{}
@@ -99,6 +100,7 @@
 </script>
 
 <main on:mousemove="{handleMouseMove}">
+	<EzBar />
 	<div id="blob" bind:this="{blob}" class:showBlob={showBlob}></div>
 	<div class="content">
 		<slot />
