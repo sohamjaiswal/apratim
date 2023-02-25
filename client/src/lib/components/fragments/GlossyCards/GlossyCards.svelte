@@ -26,10 +26,9 @@
     <div class="card">
         <div class="card-border" />
         <div class="card-content">
-            <div class="banner" style={`background-image: url(https://images7.alphacoders.com/108/1081933.jpg);`} />
+            <div class="banner" style={`background-image: url(${cardContent.image});`} />
             <div class="content">
-                <h4>CCET Valorant Tourney</h4>
-                <p>Cash prizes upto <strong>INR 10K<strong></p>
+                {@html cardContent.description}
             </div>
         </div>
     </div>
