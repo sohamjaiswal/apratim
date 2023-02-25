@@ -36,10 +36,15 @@
 		> * {
 			scroll-snap-align: start;
 		}
-
 		@media only screen and (min-width: 1000px) {
-            width: 60rem;
+            width: 1000px;
         }
+		@media only screen and (min-width: 1080px) {
+			width: 1080px;
+		}
+		@media only screen and (min-width: 1300px) {
+			width: 1300px
+		}
         @media only screen and (max-width: 1000px) {
             width: 95vw;
         }
