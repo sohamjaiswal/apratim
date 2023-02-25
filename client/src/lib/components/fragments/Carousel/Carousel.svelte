@@ -25,46 +25,49 @@
 
 <script type="ts">
 	import sampleImage from "$lib/assets/sample.webp";
-	import { onMount } from "svelte";
 
 	let track: any;
 
-	onMount(() => {
-		window.onmousedown = (e) => {
-			track.dataset.mouseDownAt = e.clientX;
-		};
-		window.onmousemove = (e) => {
-			if (track.dataset.mouseDownAt === "0") return;
-			const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
-				maxDelta = window.innerWidth / 2;
-			const percentage = (mouseDelta / maxDelta) * -100,
-				nextPercentage = Math.max(
-					Math.min(parseFloat(track.dataset.prevPercentage) + percentage, 0),
-					-100
-				);
-			track.dataset.percentage = nextPercentage;
-			track.style.transform = `translate(${nextPercentage}%, -50%)`;
-			track.animate(
+	const handleScroll = () => {
+		return null;
+	};
+
+	const handleMouseMove = (e: MouseEvent) => {
+		if (track.dataset.mouseDownAt === "0") return;
+		const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+			maxDelta = window.innerWidth / 2;
+		const percentage = (mouseDelta / maxDelta) * -100,
+			nextPercentage = Math.max(
+				Math.min(parseFloat(track.dataset.prevPercentage) + percentage, 0),
+				-100
+			);
+		track.dataset.percentage = nextPercentage;
+		track.style.transform = `translate(${nextPercentage}%, -50%)`;
+		track.animate(
+			{
+				transform: `translate(${nextPercentage}%, -50%)`
+			},
+			{ duration: 1200, fill: "forwards" }
+		);
+
+		for (const image of track.getElementsByClassName("image")) {
+			image.animate(
 				{
-					transform: `translate(${nextPercentage}%, -50%)`
+					objectPosition: `${100 + nextPercentage}% center`
 				},
 				{ duration: 1200, fill: "forwards" }
 			);
+		}
+	};
 
-			for (const image of track.getElementsByClassName("image")) {
-				image.animate(
-					{
-						objectPosition: `${100 + nextPercentage}% center`
-					},
-					{ duration: 1200, fill: "forwards" }
-				);
-			}
-		};
-		window.onmouseup = () => {
-			track.dataset.mouseDownAt = "0";
-			track.dataset.prevPercentage = track.dataset.percentage;
-		};
-	});
+	const handleMouseUp = () => {
+		track.dataset.mouseDownAt = "0";
+		track.dataset.prevPercentage = track.dataset.percentage;
+	};
+
+	const handleMouseDown = (e: MouseEvent) => {
+		track.dataset.mouseDownAt = e.clientX;
+	};
 </script>
 
 <section>
@@ -77,3 +80,9 @@
 		<img src="{sampleImage}" alt="" class="image" draggable="false" />
 	</div>
 </section>
+<svelte:window
+	on:scroll="{handleScroll}"
+	on:mousemove="{handleMouseMove}"
+	on:mouseup="{handleMouseUp}"
+	on:mousedown="{handleMouseDown}"
+/>
