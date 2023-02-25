@@ -8,6 +8,7 @@
 		color: #fff;
 		overflow-x: hidden;
 		scroll-behavior: smooth;
+		align-items: center;
 	}
 
 	#blob {
@@ -21,12 +22,23 @@
 		border-radius: 50%;
 		animation: rotate 20s infinite;
 		filter: blur(200px);
+		z-index: -0;
 	}
 
 	.content {
+		margin-top: 48px;
+		padding-bottom: 48px;
 		> * {
 			scroll-snap-align: start;
 		}
+
+		@media only screen and (min-width: 1000px) {
+            width: 60rem;
+        }
+        @media only screen and (max-width: 1000px) {
+            width: 95vw;
+        }
+		z-index: 1;
 	}
 
 	@keyframes rotate {
