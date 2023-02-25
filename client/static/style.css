@@ -61,6 +61,10 @@
 	--border-hover: rgb(120, 120, 120);
 }
 
+* {
+	scroll-behavior: smooth;
+}
+
 h1,
 h2,
 h3,

@@ -4,6 +4,6 @@ export interface IDevCard {
 	devName: string;
 	devTagline: string;
 	colors: [string, string];
-	// guildedProfileLink: string,
+	profileLink: string;
 	devBio: string;
 }

@@ -7,7 +7,7 @@ export const SohamDetails: IDevCard = {
 	devName: "Soham Jaiswal",
 	devTagline: "Caffeine -> Software",
 	colors: ["#ff85cc", "#ff8452"] as [string, string],
-	// guildedProfileLink: "https://guilded.gg/profile/EdV9p2a4",
+	profileLink: "https://kodski.com/",
 	devBio: `
     <p>Director at Cybtekk & Quoal</p>
     <p>Hi! I am Soham. I am a Full Stack Developer & an engineering student in Electronics & Communication Engg. @ CCET. I am open to taking up projects with professionals and students alike.</p>`
