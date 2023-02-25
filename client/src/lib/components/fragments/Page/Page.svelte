@@ -6,7 +6,6 @@
 		flex-direction: column;
 		scroll-snap-type: y mandatory;
 		color: #fff;
-		overflow-x: hidden;
 		scroll-behavior: smooth;
 		align-items: center;
 	}
