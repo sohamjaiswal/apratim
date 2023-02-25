@@ -6,7 +6,7 @@
 		cursor: pointer;
 		&>.logo {
 			position: absolute;
-			top: 5vh;
+			top: 4vh;
 			left: 3vw;
 			z-index: 1001;
 			user-select: none;
@@ -270,6 +270,42 @@
 			left: 50%;
 		}
 	}
+	@media screen and (max-height: 560px) {
+		.contactInfo {
+			display: none !important;
+		}
+	}
+	@media screen and (max-width: 1024px) {
+		.contactInfo {
+			display: none !important;
+		}
+		.links {
+			width: 70vw !important;
+		}
+	}
+	@media screen and (max-width: 520px) {
+		nav {
+			top: 20vh;
+		}
+		.links {
+			width: 85vw !important;
+		}
+	}	
+	@media screen and (max-width: 345px) {
+		.hamburger {
+			width: 60px !important;
+			height: 60px !important;
+		}
+		.close {
+			border-width: 5px !important;
+			&>div>span {
+				height: 5px !important;
+			}
+		}
+		.logo {
+			height: 80px !important;
+		}
+	}
 </style>
 
 <script lang="ts">
@@ -335,7 +371,7 @@
 				<StrikethroughText label="clubs" />
 			</a>
 			<a href="/organizingTeams">
-				<StrikethroughText label="organizing teams" />
+				<StrikethroughText label="organizers" />
 			</a>
 			<a href="/faq">
 				<StrikethroughText label="faq" />
