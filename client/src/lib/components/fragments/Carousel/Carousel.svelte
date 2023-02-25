@@ -2,7 +2,7 @@
 	section {
 		height: 60vh;
 		width: 100vw;
-		overflow: hidden;
+		overflow: visible;
 		position: relative;
 		& > .image-track {
 			display: flex;

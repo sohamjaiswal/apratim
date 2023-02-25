@@ -28,6 +28,7 @@
 		width: 100%;
 	}
 
+<<<<<<< HEAD
 	.mobileCarousel {
 		display: none;
 	}
@@ -39,6 +40,12 @@
 		.carousel {
 			display: none;
 		}
+=======
+	.fixed-wrapper {
+		position: absolute;
+		width: 100vw;
+		height: 100%;
+>>>>>>> 093f386 (fix: carousel)
 	}
 </style>
 
@@ -63,6 +70,7 @@
 			</div>
 		</div>
 	</Section>
+<<<<<<< HEAD
 	<Section>
 		<div class="carousel">
 			<Carousel />
@@ -70,6 +78,15 @@
 		<div class="mobileCarousel">
 			<MobileCarousel />
 		</div>
+=======
+	<Section overflow={true}>
+		<div class="fixed-wrapper">
+			<Carousel />
+		</div>
+	</Section>
+	<Section>
+		<div class="third"></div>
+>>>>>>> 093f386 (fix: carousel)
 	</Section>
 	<Section />
 	<Section>
