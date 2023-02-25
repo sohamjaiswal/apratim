@@ -23,6 +23,11 @@
 		animation: rotate 20s infinite;
 		filter: blur(200px);
 		z-index: -0;
+		opacity: 0;
+		transition:opacity 1000ms;
+		&.showBlob {
+			opacity: 1;
+		}
 	}
 
 	.content {
@@ -66,6 +71,13 @@
 	let m = { x: 0, y: 0 };
 	let p = { x: 0, y: 0 };
 
+	import type { IPageProps } from '../../../types/page.types';
+
+	 // eslint-disable-next-line @typescript-eslint/no-empty-interface
+	 interface $$Props extends IPageProps{}
+
+	export let showBlob = true
+
 	let blob: HTMLElement;
 
 	const handleMouseMove = (event: MouseEvent) => {
@@ -83,7 +95,7 @@
 </script>
 
 <main on:mousemove="{handleMouseMove}">
-	<div id="blob" bind:this="{blob}"></div>
+	<div id="blob" bind:this="{blob}" class:showBlob={showBlob}></div>
 	<div class="content">
 		<slot />
 	</div>
