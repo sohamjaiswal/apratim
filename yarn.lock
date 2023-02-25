@@ -1591,6 +1591,13 @@
     "@storybook/types" "7.0.0-beta.54"
     ts-dedent "^2.0.0"
 
+"@storybook/addon-svelte-csf@^2.0.11":
+  version "2.0.11"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-svelte-csf/-/addon-svelte-csf-2.0.11.tgz#5fcbab74690555cf4c7999757aedc93b7a6bd79d"
+  integrity sha512-sBOqZaXv60uWa0b7jubJ+FQ5JbckgvNsBw+ucd/s3304BeTKG4ZUel+yJEjpt0ebZqty8xWchBZev1htxBVD/Q==
+  dependencies:
+    ts-dedent "^2.0.0"
+
 "@storybook/addon-toolbars@7.0.0-beta.54":
   version "7.0.0-beta.54"
   resolved "https://registry.yarnpkg.com/@storybook/addon-toolbars/-/addon-toolbars-7.0.0-beta.54.tgz#35632894dbd27ed2eaeeae8c33ef968374d0279e"

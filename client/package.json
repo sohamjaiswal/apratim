@@ -51,6 +51,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@storybook/addon-svelte-csf": "^2.0.11",
 		"axios": "^1.2.0"
 	}
 }
