@@ -85,7 +85,7 @@
 			<span></span>
 		</div>
 	</div>
-	<div class="overlay">
+	<!-- <div class="overlay">
 		<nav class="links" bind:this="{links}">
 			<a href="/">
 				<StrikethroughText label="Home" />
@@ -109,20 +109,20 @@
 				<StrikethroughText label="Contact Us" />
 			</a>
 		</nav>
-		<!-- 
-			Home
-			Events
-			Clubs
-			Sponsors
-			Organizing team
-			FAQ
-			contact us
-			schedule
+	</div> -->
+	<!-- 
+		Home
+		Events
+		Clubs
+		Sponsors
+		Organizing team
+		FAQ
+		contact us
+		schedule
 
-			Signup button
-			Login button
-			isLoggedin == false | true
-			if logged in, signup is removed and login changed to logout
-		 -->
-	</div>
+		Signup button
+		Login button
+		isLoggedin == false | true
+		if logged in, signup is removed and login changed to logout
+	 -->
 </section>
