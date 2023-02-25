@@ -5,16 +5,8 @@
 		max-height: fit-content;
 		scroll-snap-align: center;
 	}
-
-	.overflow {
-		overflow-x: hidden;
-	}
 </style>
 
-<script lang="ts">
-	export let overflow = false
-</script>
-
-<div class="section" class:overflow={!overflow}>
+<div class="section">
 	<slot />
 </div>
