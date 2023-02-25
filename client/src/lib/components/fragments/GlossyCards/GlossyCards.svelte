@@ -1,7 +1,10 @@
 <script lang="ts">
-	import type { IGlossyCard } from '../../../types/glossy-card.types';
+	import type { IGlossyCard, IGlossyCards } from '../../../types/glossy-card.types';
 
-    export let cards = Array(6)
+    // eslint-disable-next-line @typescript-eslint/no-empty-interface
+    interface $$Props extends IGlossyCards{}
+
+    export let cards: IGlossyCard[] = Array(6)
 
     const handleContainerMouseMove = (e: any) => {
         //eslint-disable-next-line no-undef
