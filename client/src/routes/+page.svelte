@@ -48,13 +48,4 @@
 			</div>
 		</div>
 	</Section>
-	<Section>
-		<div class="second"></div>
-	</Section>
-	<Section>
-		<div class="third"></div>
-	</Section>
-	<Section>
-		<div class="fourth"></div>
-	</Section>
 </Page>
