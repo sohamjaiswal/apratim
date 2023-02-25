@@ -1,28 +1,24 @@
-<script>
+<script lang="ts">
+	import type { IGlossyCard } from '../../../types/glossy-card.types';
 
     export let cards = Array(6)
 
-    const handleContainerMouseMove = (/** @type {{ clientX: number; clientY: number; }} */ e) => {
-        for(const card of document.getElementsByClassName('card')) {
-            const rect = card.getBoundingClientRect(),
-            x = e.clientX - rect.left,
-            y = e.clientY - rect.top
+    const handleContainerMouseMove = (e: any) => {
+        //eslint-disable-next-line no-undef
+        const cards: HTMLCollectionOf<Element> = document.getElementsByClassName('card')
+        //eslint-disable-next-line no-undef
+        const realCards = cards as HTMLCollectionOf<HTMLElement>
+        if (realCards) {
+            for (let i = 0; realCards.length; i++) {
+            const rect = realCards[i].getBoundingClientRect(),
+                x = e.clientX - rect.left,
+                y = e.clientY - rect.top
 
-        card.style.setProperty("--mouse-x", `${x}px`)
-        card.style.setProperty("--mouse-y", `${y}px`)
+            realCards[i].style.setProperty("--mouse-x", `${x}px`)
+            realCards[i].style.setProperty("--mouse-y", `${y}px`)
+        }
         }
     }
-
-    // const handleCardMouseMove = (e: any) => {
-    //     const {currentTarget: target} = e
-    //     const rect = target.getBoundingClientRect(),
-    //         x = e.clientX - rect.left,
-    //         y = e.clientY - rect.top
-
-    //     target.style.setProperty("--mouse-x", `${x}px`)
-    //     target.style.setProperty("--mouse-y", `${y}px`)
-    // }
-
 </script>
 
 <div class="cards" on:mousemove="{handleContainerMouseMove}">
@@ -30,7 +26,11 @@
     <div class="card">
         <div class="card-border" />
         <div class="card-content">
-
+            <div class="banner" style={`background-image: url(https://images7.alphacoders.com/108/1081933.jpg);`} />
+            <div class="content">
+                <h4>CCET Valorant Tourney</h4>
+                <p>Cash prizes upto <strong>INR 10K<strong></p>
+            </div>
         </div>
     </div>
     {/each}
@@ -100,11 +100,28 @@
                 margin: 1px;
                 position: relative;
                 z-index: 2;
+                .banner {
+                    position: absolute;
+                    height: inherit;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    background-size: contain;
+                    background-position: center top;
+                    background-repeat: no-repeat;
+                    z-index: 4;
+                    border-radius: inherit;
+                    box-shadow: inset 0px -150px 40px 0px var(--card-bg);
+                }
+                .content {
+                    margin: 55% 16px;
+                    position: absolute;
+                    z-index: 5;
+                }
             }
         }
         &:hover > .card > .card-border {
             opacity: 1;
         }
     }
-
 </style>
