@@ -6,6 +6,10 @@
 
     export let cards: IGlossyCard[] = Array(6)
 
+    cards.forEach((card) => {
+        console.log(card.link)
+    })
+
     const handleContainerMouseMove = (e: any) => {
         //eslint-disable-next-line no-undef
         const cards: HTMLCollectionOf<Element> = document.getElementsByClassName('card')
@@ -26,7 +30,8 @@
 
 <div class="cards" on:mousemove="{handleContainerMouseMove}">
     {#each cards as cardContent}
-    <div class="card">
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <div class="card" on:click={() => {cardContent.link ? window.open(cardContent.link, '_blank') : null}} class:clickable={cardContent.link}>
         <div class="card-border" />
         <div class="card-content">
             <div class="banner" style={`background-image: url(${cardContent.image});`} />
@@ -39,6 +44,9 @@
 </div>
 
 <style lang="scss">
+    .clickable {
+        cursor: pointer;
+    }
 
     .cards {
 
@@ -56,7 +64,6 @@
             height: 260px;
             width: 300px;
             border-radius: 8px;
-            cursor: pointer;
             position: relative;
 
             &::before, .card-border {

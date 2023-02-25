@@ -8,7 +8,7 @@
     export let devName: $$Props['devName'];
     export let devTagline: $$Props['devTagline'];
     export let colors: $$Props['colors'];
-    // export let guildedProfileLink: $$Props['guildedProfileLink'];
+    export let profileLink: $$Props['profileLink'] = "";
     export let devBio: $$Props['devBio'];
 </script>
 
@@ -16,10 +16,12 @@
 <div class="dev-card"
     style = {`
         background: linear-gradient(180deg, ${colors[0]}, ${colors[1]});
+        ${profileLink != "" ? "cursor:pointer;" : ""}
     `}
+    on:click={() => {profileLink != "" ? window.open(profileLink, '_blank') : null}}
 >
     <div class="banner-image" style={`
-        background-image: url(${bannerImage})
+        background-image: url(${bannerImage});
     `}>
     </div>
     <div class="avatar">
