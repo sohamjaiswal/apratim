@@ -12,7 +12,7 @@
 			top: 50%;
 			transform: translate(0%, -50%);
 			user-select: none;
-			& > .image {
+			& > img {
 				width: 55vmin;
 				height: 46vmin;
 				object-fit: cover;
@@ -27,6 +27,15 @@
 	import sampleImage from "$lib/assets/sample.webp";
 
 	let track: any;
+
+	export let images: string[] = [
+		sampleImage,
+		sampleImage,
+		sampleImage,
+		sampleImage,
+		sampleImage,
+		sampleImage
+	];
 
 	const handleScroll = () => {
 		return null;
@@ -72,12 +81,9 @@
 
 <section>
 	<div class="image-track" bind:this="{track}" data-mouse-down-at="0" data-prev-percentage="0">
-		<img src="{sampleImage}" alt="" class="image" draggable="false" />
-		<img src="{sampleImage}" alt="" class="image" draggable="false" />
-		<img src="{sampleImage}" alt="" class="image" draggable="false" />
-		<img src="{sampleImage}" alt="" class="image" draggable="false" />
-		<img src="{sampleImage}" alt="" class="image" draggable="false" />
-		<img src="{sampleImage}" alt="" class="image" draggable="false" />
+		{#each images as image}
+			<img src="{image}" alt="" class="" draggable="false" />
+		{/each}
 	</div>
 </section>
 <svelte:window
