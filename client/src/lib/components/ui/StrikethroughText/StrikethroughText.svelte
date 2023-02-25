@@ -3,8 +3,9 @@
 		text-decoration: none;
 		color: #000;
 		font-family: var(--nav-font);
-		font-size: 5rem;
+		font-size: 8.5rem;
 		font-weight: 800;
+		line-height: 0.9;
 		width: fit-content;
 		.char {
 			display: inline;
@@ -22,7 +23,7 @@
 				position: absolute;
 				top: 50%;
 				z-index: 2;
-				transform: translateY(-50%);
+				transform: translateY(-25%);
 				height: 15px;
 				display: block;
 				background-color: var(--primary);
