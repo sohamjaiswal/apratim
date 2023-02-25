@@ -1,9 +1,11 @@
 <script lang="ts">
+	import GlossyCards from '$lib/components/fragments/GlossyCards/GlossyCards.svelte';
 
     import Section from "$lib/components/ui/Section/Section.svelte";
 	import Page from "$lib/components/fragments/Page/Page.svelte";
-	import GlossyCards from "$lib/components/fragments/GlossyCards/GlossyCards.svelte";
-	import type { IGlossyCard, IGlossyCards } from "$lib/types/glossy-card.types";
+	import type { IGlossyCard } from "$lib/types/glossy-card.types";
+
+    let showBlob = true;
 
     const cards: IGlossyCard[] = [
         {
@@ -43,7 +45,7 @@
 
 </script>
 
-<Page>
+<Page bind:showBlob={showBlob}>
     <Section>
         <div class="heading">
             <h1>
@@ -51,6 +53,16 @@
                 <hr />
             </h1>
         </div>
-        <GlossyCards cards={cards} />
+        <div class="glossyCardContainer" on:mouseenter="{() => showBlob = false}" on:mouseleave="{() => showBlob = true}">
+            <GlossyCards cards={cards} />
+        </div>
     </Section>
 </Page>
+
+<style lang="scss">
+
+    .glossyCardContainer {
+        display: flex;
+    }
+
+</style>
