@@ -1,6 +1,26 @@
 <script lang='ts'>
 	import { goto } from "$app/navigation";
-	import { Button } from "$lib/components/ui";
+
+    let y: number
+    let hidden = false;
+
+    const handleScroll = () => {
+        console.log(y)
+        if (y > 50) {
+            hidden = true
+        } else {
+            hidden = false
+        }
+    }
+
+    const handleMouseEnter = () => {
+        hidden = false
+    }
+
+    const handleMouseLeave = () => {
+        hidden = true
+        handleScroll()
+    }
 
     const sponsorsClickHandler = () => {
         goto("/sponsors")
@@ -18,8 +38,8 @@
         goto("/credits")
     }
 </script>
-<div class="main-header">
-    <div class="header">
+<div class="main-header" on:mouseenter="{handleMouseEnter}" on:mouseleave="{handleMouseLeave}">
+    <div class="header" class:hidden={hidden}>
         <div class="left">
             <!-- svelte-ignore a11y-click-events-have-key-events -->
             <h1 class="logo" on:click={logoClickHandler}>
@@ -32,6 +52,7 @@
                 Events
             </h3>
 
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
             <h3 class="link" on:click={sponsorsClickHandler}>
                 Sponsors
             </h3>
@@ -48,7 +69,7 @@
         </div>
     </div>
 </div>
-
+<svelte:window bind:scrollY="{y}" on:scroll={handleScroll} />
 <style type="scss">
     .main-header {
         position: fixed;
@@ -59,6 +80,7 @@
         justify-content: center;
         z-index: 100;
         .header {
+            transition: transform 500ms;
 
             justify-content: center;
             height: 3.5rem;
@@ -98,5 +120,9 @@
     .link {
         text-decoration: underline;
         cursor: pointer;
+    }
+
+    .hidden {
+        transform: translateY(-150%);
     }
 </style>

@@ -30,7 +30,6 @@
 	}
 
 	.content {
-		margin-top: 130px;
 		padding-bottom: 48px;
 		> * {
 			scroll-snap-align: start;

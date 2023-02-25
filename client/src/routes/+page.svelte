@@ -76,8 +76,4 @@
 			<MobileCarousel />
 		</div>
 	</Section>
-	<Section />
-	<Section>
-		<div class="fourth"></div>
-	</Section>
 </Page>
