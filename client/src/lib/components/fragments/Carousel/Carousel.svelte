@@ -12,7 +12,7 @@
 			top: 50%;
 			transform: translate(0%, -50%);
 			user-select: none;
-			& > .image {
+			& > img {
 				width: 55vmin;
 				height: 46vmin;
 				object-fit: cover;
@@ -32,16 +32,27 @@
 </style>
 
 <script type="ts">
-	import sampleImage from "../../../assets/sample.webp";
-	import { onMount } from "svelte";
+	import sampleImage from "$lib/assets/sample.webp";
 
 	let track: any;
-	const handleOnDown = (e: any) => {
-		track.dataset.mouseDownAt = e.clientX;
+
+	export let images: string[] = [
+		sampleImage,
+		sampleImage,
+		sampleImage,
+		sampleImage,
+		sampleImage,
+		sampleImage
+	];
+
+	const handleScroll = () => {
+		return null;
 	};
-	const handleOnMove = (e: any) => {
+
+	const handleMouseMove = (e: MouseEvent | TouchEvent) => {
 		if (track.dataset.mouseDownAt === "0") return;
-		const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+		const mouseDelta = parseFloat(track.dataset.mouseDownAt) - 
+			((e as MouseEvent).clientX ?? (e as TouchEvent).touches[0].clientX),
 			maxDelta = window.innerWidth / 2;
 		const percentage = (mouseDelta / maxDelta) * -100,
 			nextPercentage = Math.max(
@@ -56,6 +67,7 @@
 			},
 			{ duration: 1200, fill: "forwards" }
 		);
+
 		for (const image of track.getElementsByClassName("image")) {
 			image.animate(
 				{
@@ -65,27 +77,30 @@
 			);
 		}
 	};
-	const handleOnUp = (e: any) => {
+
+	const handleMouseUp = () => {
 		track.dataset.mouseDownAt = "0";
 		track.dataset.prevPercentage = track.dataset.percentage;
 	};
-	onMount(() => {
-		window.onmousedown = (e) => handleOnDown(e);
-		window.ontouchstart = (e) => handleOnDown(e.touches[0]);
-		window.onmouseup = (e) => handleOnUp(e);
-		window.ontouchend = (e) => handleOnUp(e.touches[0]);
-		window.onmousemove = (e) => handleOnMove(e);
-		window.ontouchmove = (e) => handleOnMove(e.touches[0]);
-	});
+
+	const handleMouseDown = (e: MouseEvent | TouchEvent) => {
+		track.dataset.mouseDownAt = (e as MouseEvent).clientX ?? (e as TouchEvent).touches[0].clientX;
+	};
 </script>
 
 <section>
 	<div class="image-track" bind:this="{track}" data-mouse-down-at="0" data-prev-percentage="0">
-		<img src="{sampleImage}" alt="" class="image" draggable="false" />
-		<img src="{sampleImage}" alt="" class="image" draggable="false" />
-		<img src="{sampleImage}" alt="" class="image" draggable="false" />
-		<img src="{sampleImage}" alt="" class="image" draggable="false" />
-		<img src="{sampleImage}" alt="" class="image" draggable="false" />
-		<img src="{sampleImage}" alt="" class="image" draggable="false" />
+		{#each images as image}
+			<img src="{image}" alt="" class="" draggable="false" />
+		{/each}
 	</div>
 </section>
+<svelte:window
+	on:scroll="{handleScroll}"
+	on:mousemove="{handleMouseMove}"
+	on:touchmove="{handleMouseMove}"
+	on:mouseup="{handleMouseUp}"
+	on:touchend="{handleMouseUp}"
+	on:mousedown="{handleMouseDown}"
+	on:touchstart="{handleMouseDown}"
+/>
