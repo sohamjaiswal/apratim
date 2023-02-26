@@ -1,4 +1,12 @@
 <style lang="scss">
+	header {
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100vw;
+		height: fit-content;
+		z-index: 100;
+	}
 	main {
 		width: 100vw;
 		height: fit-content;
@@ -6,7 +14,8 @@
 		flex-direction: column;
 		scroll-snap-type: y mandatory;
 		color: #fff;
-		overflow-x: hidden;
+		scroll-behavior: smooth;
+		align-items: center;
 	}
 
 	#blob {
@@ -20,6 +29,32 @@
 		border-radius: 50%;
 		animation: rotate 20s infinite;
 		filter: blur(200px);
+		z-index: -0;
+		opacity: 0;
+		transition:opacity 1000ms;
+		&.showBlob {
+			opacity: 1;
+		}
+	}
+
+	.content {
+		padding-bottom: 48px;
+		> * {
+			scroll-snap-align: start;
+		}
+		@media only screen and (min-width: 1000px) {
+            width: 1000px;
+        }
+		@media only screen and (min-width: 1080px) {
+			width: 1080px;
+		}
+		@media only screen and (min-width: 1300px) {
+			width: 1300px
+		}
+        @media only screen and (max-width: 1000px) {
+            width: 95vw;
+        }
+		z-index: 1;
 	}
 
 	@keyframes rotate {
@@ -47,6 +82,14 @@
 	let m = { x: 0, y: 0 };
 	let p = { x: 0, y: 0 };
 
+	import type { IPageProps } from '../../../types/page.types';
+	import Navbar from '../Navbar/Navbar.svelte';
+
+	 // eslint-disable-next-line @typescript-eslint/no-empty-interface
+	 interface $$Props extends IPageProps{}
+
+	export let showBlob = true
+
 	let blob: HTMLElement;
 
 	const handleMouseMove = (event: MouseEvent) => {
@@ -64,6 +107,11 @@
 </script>
 
 <main on:mousemove="{handleMouseMove}">
-	<div id="blob" bind:this="{blob}"></div>
-	<slot />
+	<div id="blob" bind:this="{blob}" class:showBlob={showBlob}></div>
+	<header>
+		<Navbar />
+	</header>
+	<div class="content">
+		<slot />
+	</div>
 </main>

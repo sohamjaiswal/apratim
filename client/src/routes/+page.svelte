@@ -27,11 +27,31 @@
 		aspect-ratio: 1;
 		width: 100%;
 	}
+
+	.mobileCarousel {
+		display: none;
+	}
+
+	@media screen and (max-width: 600px) {
+		.mobileCarousel {
+			display: block;
+		}
+		.carousel {
+			display: none;
+		}
+	}
+	.fixed-wrapper {
+		position: absolute;
+		width: 100vw;
+		height: 100%;
+	}
 </style>
 
 <!-- Landing Page 🤌 -->
 <script lang="ts">
 	import Section from "$lib/components/ui/Section/Section.svelte";
+	import Carousel from "$lib/components/fragments/Carousel/Carousel.svelte";
+	import MobileCarousel from "$lib/components/fragments/mobileCarousel/MobileCarousel.svelte";
 	import Page from "$lib/components/fragments/Page/Page.svelte";
 
 	import logo from "$lib/assets/logo.png";
@@ -49,12 +69,11 @@
 		</div>
 	</Section>
 	<Section>
-		<div class="second"></div>
-	</Section>
-	<Section>
-		<div class="third"></div>
-	</Section>
-	<Section>
-		<div class="fourth"></div>
+		<div class="carousel">
+			<Carousel />
+		</div>
+		<div class="mobileCarousel">
+			<MobileCarousel />
+		</div>
 	</Section>
 </Page>
