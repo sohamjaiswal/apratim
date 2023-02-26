@@ -84,6 +84,7 @@
 
 	import type { IPageProps } from '../../../types/page.types';
 	import Navbar from '../Navbar/Navbar.svelte';
+	import Footer from '../Footer/Footer.svelte';
 
 	 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 	 interface $$Props extends IPageProps{}
@@ -114,4 +115,5 @@
 	<div class="content">
 		<slot />
 	</div>
+	<Footer />
 </main>
