@@ -308,8 +308,22 @@
 <script lang="ts">
 	import StrikethroughText from "../../ui/StrikethroughText/StrikethroughText.svelte";
 	import logo from "$lib/assets/logo.png";
+	import { onMount } from "svelte";
+	import { page } from "$app/stores";
 	let overlay: HTMLElement;
 	let addClass = false;
+	let links: HTMLElement;
+	onMount(() => {
+		Array.from(links.children).forEach((link: Element) => {
+			link.addEventListener('click', () => {
+				let goto: string | null = link.getAttribute('href');
+				if (goto === $page.url.pathname) {
+					overlay.style.display = 'none';
+					addClass = false;
+				}
+			})
+		})
+	})
 	const toggleNavBar = () => {
 		if (overlay.style.display === 'none') {
 			overlay.style.display = 'block';
@@ -354,7 +368,7 @@
 				Chandigarh
 			</a>
 		</div>
-		<nav class="links">
+		<nav class="links" bind:this={links}>
 			<a href="/">
 				<StrikethroughText label="home" />
 			</a>
