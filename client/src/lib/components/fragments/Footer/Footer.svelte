@@ -5,6 +5,8 @@
 		background-color: var(--primary);
 		z-index: 1;
 		color: #fff;
+		display: flex;
+		flex-direction: column;
 		&>.content {
 			width: inherit;
 			height: 50vh;
@@ -93,6 +95,62 @@
 				}
 			}
 		}
+		&>.underFooter {
+			margin: 0 10vw;
+			width: 80vw;
+			height: 12vh;
+			padding: 3vh 1.5vw;
+			padding-bottom: 0;
+			border-top: 1px solid #000;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			font-size: 1.3rem;
+			text-transform: uppercase;
+			&>.links {
+				display: block;
+				display: flex;
+				gap: 2vw;
+				height: fit-content;
+				&>a {
+					color: #000;
+					text-decoration: none;
+					transition: all 0.2s ease;
+					&:hover {
+						color: #fff;
+					}
+				}
+			}
+			&>.socials {
+				display: flex;
+				gap: 2vw;
+				align-items: center;
+				height: fit-content;
+				&>.heading {
+					color: #000;
+					height: fit-content;
+				}
+				&>.logos {
+					display: flex;
+					gap: 1vw;
+					&>a {
+						display: flex;
+						align-items: center;
+						text-decoration: none;
+						color: #000;
+						padding: 1vh;
+						border-radius: 50%;
+						transition: all 0.2s ease;
+						&:hover {
+							background-color: rgb(219, 219, 0);
+						}
+						&>img {
+							height: 3vh;
+						}
+					}
+				}
+			}
+		}
 	}
 	@keyframes fadeInText {
 		from {
@@ -107,6 +165,9 @@
 </style>
 
 <script lang="ts">
+	import InstagramIcon from '$lib/assets/socials/instagram.svg';
+	import LinkedInIcon from '$lib/assets/socials/linkedin.svg';
+	import YoutubeIcon from '$lib/assets/socials/youtube.svg';
 </script>
 
 <footer>
@@ -133,6 +194,29 @@
 				<br>
 				Chandigarh
 			</a>
+		</div>
+	</div>
+	<div class="underFooter">
+		<div class="links">
+			<a href="/privacy">Privacy Policy</a>
+			<a href="/tnc">Terms and Conditions</a>
+			<a href="/sponsors">Our sponsors</a>
+		</div>
+		<div class="socials">
+			<div class="heading">
+				See what we're up to
+			</div>
+			<div class="logos">
+				<a href="https://www.instagram.com/ccetapratim/">
+					<img src={InstagramIcon} alt="Instagram">
+				</a>
+				<a href="https://www.linkedin.com/school/chandigarh-college-of-engineering-technology-degree-wing-panjab-university/?originalSubdomain=in">
+					<img src={LinkedInIcon} alt="LinkedIn">
+				</a>
+				<a href="https://www.youtube.com/@ccetapratim3386">
+					<img src={YoutubeIcon} alt="Youtube">
+				</a>
+			</div>
 		</div>
 	</div>
 </footer>
