@@ -3,8 +3,9 @@
 		text-decoration: none;
 		color: #000;
 		font-family: var(--nav-font);
-		font-size: 5rem;
+		font-size: 12vh;
 		font-weight: 800;
+		line-height: 0.9;
 		width: fit-content;
 		.char {
 			display: inline;
@@ -22,7 +23,7 @@
 				position: absolute;
 				top: 50%;
 				z-index: 2;
-				transform: translateY(-50%);
+				transform: translateY(-25%);
 				height: 15px;
 				display: block;
 				background-color: var(--primary);
@@ -37,6 +38,17 @@
 		}
 		to {
 			width: 100%;
+		}
+	}
+
+	@media screen and (max-width: 880px) {
+		span {
+			font-size: 11vh;
+		}
+	}
+	@media screen and (max-width: 560px) {
+		span {
+			font-size: 8vh;
 		}
 	}
 </style>

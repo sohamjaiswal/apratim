@@ -1,4 +1,12 @@
 <style lang="scss">
+	header {
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100vw;
+		height: fit-content;
+		z-index: 100;
+	}
 	main {
 		width: 100vw;
 		height: fit-content;
@@ -75,7 +83,7 @@
 	let p = { x: 0, y: 0 };
 
 	import type { IPageProps } from '../../../types/page.types';
-	import EzBar from '../EZBar/EZBar.svelte';
+	import Navbar from '../Navbar/Navbar.svelte';
 
 	 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 	 interface $$Props extends IPageProps{}
@@ -99,8 +107,10 @@
 </script>
 
 <main on:mousemove="{handleMouseMove}">
-	<EzBar />
 	<div id="blob" bind:this="{blob}" class:showBlob={showBlob}></div>
+	<header>
+		<Navbar />
+	</header>
 	<div class="content">
 		<slot />
 	</div>
