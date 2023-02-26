@@ -63,6 +63,7 @@
 			left: 0;
 			z-index: 1000;
 			animation: overlayHeight 0.3s ease forwards;
+			cursor: initial;
 			&>.contactInfo {
 				position: absolute;
 				left: 3vw;
@@ -106,6 +107,7 @@
 				position: absolute;
 				right: 5vw;
 				bottom: 1vh;
+				cursor: initial;
 				&.links {
 					display: flex;
 					flex-direction: column;
@@ -117,7 +119,7 @@
 						text-decoration: none;
 						cursor: pointer;
 						margin-left: 50vw;
-						width: 55vw;
+						width: fit-content;
 						overflow-inline: hidden;
 						&:nth-child(1) {
 							animation: navText 0.6s ease 0.2s forwards;
