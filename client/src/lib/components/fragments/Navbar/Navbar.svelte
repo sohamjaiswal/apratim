@@ -381,7 +381,7 @@
 			<a href="/clubs">
 				<StrikethroughText label="clubs" />
 			</a>
-			<a href="/organizingTeams">
+			<a href="/credits">
 				<StrikethroughText label="organizers" />
 			</a>
 			<a href="/faq">
