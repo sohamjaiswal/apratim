@@ -63,6 +63,7 @@
 
 * {
 	scroll-behavior: smooth;
+	box-sizing: border-box;
 }
 
 h1,

@@ -1,13 +1,13 @@
 <style lang="scss">
 	section {
-		position: relative;
 		width: 100vw;
 		height: fit-content;
 		cursor: pointer;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 5vh 5vw;
 		&>.logo {
-			position: absolute;
-			top: 4vh;
-			left: 3vw;
 			z-index: 1001;
 			user-select: none;
 			height: 120px;
@@ -16,9 +16,6 @@
 			}
 		}
 		& > .hamburger {
-			position: absolute;
-			right: 5vw;
-			top: 5vh;
 			width: 90px;
 			height: 90px;
 			border-radius: 50%;
