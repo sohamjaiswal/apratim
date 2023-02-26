@@ -109,9 +109,10 @@
 				&.links {
 					display: flex;
 					flex-direction: column;
+					justify-content: space-around;
 					user-select: none;
 					width: 55vw;
-					height: 86vh;
+					height: 80vh;
 					& > a {
 						text-decoration: none;
 						cursor: pointer;
@@ -280,10 +281,7 @@
 			width: 70vw !important;
 		}
 	}
-	@media screen and (max-width: 520px) {
-		nav {
-			top: 20vh;
-		}
+	@media screen and (max-width: 912px) {
 		.links {
 			width: 85vw !important;
 		}
