@@ -66,7 +66,7 @@
 			&>.contactInfo {
 				position: absolute;
 				left: 3vw;
-				bottom: 4vh;
+				bottom: 2.5vh;
 				color: #000;
 				font-family: var(--nav-secondary-font);
 				font-weight: 300;
