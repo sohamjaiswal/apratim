@@ -1,5 +1,6 @@
 <style lang="scss">
 	footer {
+		position: relative;
 		height: 65vh;
 		width: 100vw;
 		background-color: var(--primary);
@@ -7,6 +8,14 @@
 		color: #fff;
 		display: flex;
 		flex-direction: column;
+		&>span {
+			position: absolute;
+			left: -20vw;
+			height: 50vh;
+			width: 140vw;
+			background-color: var(--primary);
+			z-index: -1;
+		}
 		&>.content {
 			width: inherit;
 			height: 50vh;
@@ -15,18 +24,6 @@
 			display: flex;
 			justify-content: space-between;
 			position: relative;
-			&::before {
-				content: '';
-				position: absolute;
-				top: -20vh;
-				left: 0;
-				height: 20vh;
-				width: 100vw;
-				background-color: var(--primary);
-				border-top-left-radius: 50%;
-				border-top-right-radius: 50%;
-				z-index: -1;
-			}
 			&>.maps {
 				user-select: none;
 				&>iframe {
@@ -168,9 +165,37 @@
 	import InstagramIcon from '$lib/assets/socials/instagram.svg';
 	import LinkedInIcon from '$lib/assets/socials/linkedin.svg';
 	import YoutubeIcon from '$lib/assets/socials/youtube.svg';
+	import { onMount } from 'svelte';
+
+	let footer: HTMLElement;
+	let fbr: HTMLElement;
+
+	onMount(() => {
+		const percentageSeen = (): number => {
+			// Get the relevant measurements and positions
+			if (!footer) return 0;
+			const viewportHeight = window.innerHeight;
+			const scrollTop = window.scrollY;
+			const elementOffsetTop = footer.offsetTop;
+			const elementHeight = footer.offsetHeight;
+			// Calculate percentage of the element that's been seen
+			const distance = scrollTop + viewportHeight - elementOffsetTop;
+			const percentage = Math.round(
+			  distance / ((viewportHeight + elementHeight) / 100)
+			);
+			// Restrict the range to between 0 and 100
+			return Math.min(100, Math.max(0, percentage));
+		};	
+		window.addEventListener('scroll', () => {
+			const y = percentageSeen();
+			fbr.style.borderRadius = `${(y<23) ? 46 : y*2}% ${(y<23) ? 46 : y*2}% 0 0`;
+			fbr.style.top = `-${(y>20) ? 20 : y}vh`;
+		})
+	})
 </script>
 
-<footer>
+<footer bind:this={footer} data-previous-scroll-pos=0 >
+	<span bind:this={fbr}></span>
 	<div class="content">
 		<div class="maps">
 			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3429.687519256584!2d76.80650046560172!3d30.727183942950116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fed212e27c319%3A0x491b3277baba3581!2sChandigarh%20College%20Of%20Engineering%20and%20Technology%20Degree%20Wing!5e0!3m2!1sen!2sin!4v1677411314991!5m2!1sen!2sin" style="border:0;" title="Chandigarh College Of Engineering and Technology" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
