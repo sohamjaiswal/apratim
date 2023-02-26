@@ -87,6 +87,11 @@
 			font-size: 3rem !important;
 		}
 	}
+	@media screen and (max-width: 820px) and (max-height: 1180px) {
+		span {
+			font-size: 6rem !important;
+		}
+	}
 </style>
 
 <script lang="ts">
