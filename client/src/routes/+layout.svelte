@@ -16,6 +16,8 @@
 		color: #fff;
 		scroll-behavior: smooth;
 		align-items: center;
+        margin-top: 175px;
+        margin-bottom: 175px;
 	}
 
 	#blob {
@@ -86,10 +88,16 @@
 	import Navbar from '$lib/components/fragments/Navbar/Navbar.svelte';
 	import Footer from '$lib/components/fragments/Footer/Footer.svelte';
 
-	 // eslint-disable-next-line @typescript-eslint/no-empty-interface
+    import {showBlob} from './store.js'
+
+	// eslint-disable-next-line @typescript-eslint/no-empty-interface
 	// interface $$Props extends IPageProps{}
 
-	let showBlob = true
+    let liveShowBlob: boolean
+
+    showBlob.subscribe(value => {
+        liveShowBlob = value
+    })
 
 	let blob: HTMLElement;
 
@@ -111,7 +119,7 @@
 	<Navbar />
 </header>
 <main on:mousemove="{handleMouseMove}">
-	<div id="blob" bind:this="{blob}" class:showBlob={showBlob}></div>
+	<div id="blob" bind:this="{blob}" class:showBlob={liveShowBlob}></div>
 	<div class="content">
 		<slot />
 	</div>
