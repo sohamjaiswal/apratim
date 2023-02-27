@@ -26,8 +26,22 @@
 				transform: translateY(-25%);
 				height: 15px;
 				display: block;
-				background-color: var(--primary);
-				animation: navBarAnim 0.7s ease forwards;
+				&.sp1 {
+					background-color: var(--primary);
+					animation: navBarAnim 0.7s ease forwards;
+				}
+				&.sp2 {
+					background-color: var(--highlight);
+					animation: navBarAnim 0.6s ease forwards;
+				}
+				&.sp3 {
+					background-color: var(--alternate-color);
+					animation: navBarAnim 0.575s ease forwards;
+				}
+				&.sp4 {
+					background-color: var(--highlight-hover);
+					animation: navBarAnim 0.5s ease forwards;
+				}
 			}
 		}
 	}
@@ -71,5 +85,8 @@
 			</div>
 		{/if}
 	{/each}
-	<span></span>
+	<span class="sp4"></span>
+	<span class="sp3"></span>
+	<span class="sp2"></span>
+	<span class="sp1"></span>
 </span>

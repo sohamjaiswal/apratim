@@ -76,6 +76,10 @@
 			display: none;
 		}
 	}
+
+	.headerMargin {
+		margin-top: 175px;
+	}
 </style>
 
 <script lang="ts">
@@ -90,6 +94,7 @@
 	 interface $$Props extends IPageProps{}
 
 	export let showBlob = true
+	export let headerMargin = true
 
 	let blob: HTMLElement;
 
@@ -110,7 +115,7 @@
 <header>
 	<Navbar />
 </header>
-<main on:mousemove="{handleMouseMove}">
+<main on:mousemove="{handleMouseMove}" class:headerMargin={headerMargin}>
 	<div id="blob" bind:this="{blob}" class:showBlob={showBlob}></div>
 	<div class="content">
 		<slot />
