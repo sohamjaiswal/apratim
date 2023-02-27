@@ -35,7 +35,7 @@
 <script type="ts">
 	import sampleImage from "$lib/assets/sample.webp";
 
-	let track: any;
+	let track: HTMLElement;
 
 	export let images: string[] = [
 		sampleImage,
@@ -51,6 +51,7 @@
 	};
 
 	const handleMouseMove = (e: MouseEvent | TouchEvent) => {
+		if (!track.dataset.mouseDownAt || !track.dataset.prevPercentage) return;
 		if (track.dataset.mouseDownAt === "0") return;
 		const mouseDelta = parseFloat(track.dataset.mouseDownAt) - 
 			((e as MouseEvent).clientX ?? (e as TouchEvent).touches[0].clientX),
@@ -60,7 +61,7 @@
 				Math.min(parseFloat(track.dataset.prevPercentage) + percentage, 0),
 				-100
 			);
-		track.dataset.percentage = nextPercentage;
+		track.dataset.percentage = `${nextPercentage}`;
 		track.style.transform = `translate(${nextPercentage}%, -50%)`;
 		track.animate(
 			{
@@ -85,7 +86,7 @@
 	};
 
 	const handleMouseDown = (e: MouseEvent | TouchEvent) => {
-		track.dataset.mouseDownAt = (e as MouseEvent).clientX ?? (e as TouchEvent).touches[0].clientX;
+		track.dataset.mouseDownAt = `${((e as MouseEvent).clientX ?? (e as TouchEvent).touches[0].clientX)}`;
 	};
 </script>
 
