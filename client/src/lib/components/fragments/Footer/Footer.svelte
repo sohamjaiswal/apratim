@@ -27,6 +27,8 @@
 			position: relative;
 			&>.maps {
 				user-select: none;
+				display: flex;
+				justify-content: center;
 				&>iframe {
 					width: 35vw;
 					height: 40vh;
@@ -58,7 +60,7 @@
 					&>a {
 						text-decoration: none;
 						color: #000;
-						display: inline-block;
+						display: block;
   						position: relative;
 						&::after {
 							content: '';
@@ -89,6 +91,12 @@
 					&:hover {
 						transform: scale(0.99);
 						transition: all 0.2s ease;
+					}
+					&>span {
+						display: block;
+						&.seprators {
+							display: none;
+						}
 					}
 				}
 			}
@@ -171,7 +179,61 @@
 		}
 	}
 	@media screen and (max-width: 1300px) {
-
+		.contactInfo {
+			font-size: 2.2rem !important;
+		}
+	}
+	@media screen and (max-width: 1000px) {
+		.footer {
+			height: 60vh !important;
+		}
+		.content {
+			height: 45vh !important;
+		}
+		.contactInfo {
+			font-size: 1.8rem !important;
+		}
+	}
+	@media screen and (max-width: 650px) {
+		.footer {
+			height: max-content !important;
+		}
+		.offlineAddress {
+			&>span {
+				display: inline !important;
+				&.seprators {
+					display: inline !important;
+				}
+			}
+		}
+		.content {
+			height: fit-content !important;
+			flex-direction: column;
+			align-items: center;
+			width: 80vw;
+			padding: 0 !important;
+			padding-bottom: 2vh !important;
+			gap: 2vh;
+		}
+		.maps {
+			width: 100% !important;
+			&>iframe {
+				width: 80% !important;
+			}
+		}
+		.contactInfo {
+			width: 80% !important;
+			justify-content: center;
+		}
+		.underFooter {
+			height: fit-content !important;
+			padding-bottom: 2vh !important;
+		}
+	}
+	@media screen and (max-width: 500px) {
+		.socials {
+			flex-direction: column;
+		}
 	}
 </style>
 
@@ -227,11 +289,21 @@
 				</a>
 			</div>
 			<a href="https://goo.gl/maps/aJZ2mFZA1Q5yHfWo7" class="offlineAddress">
-				Chandigarh College of Engineering and Technology
-				<br>
-				Sector 26
-				<br>
-				Chandigarh
+				<span>
+					Chandigarh College of Engineering and Technology
+				</span>
+				<span class="seprators">
+					,
+				</span>
+				<span>
+					Sector 26
+				</span>
+				<span class="seprators">
+					,
+				</span>
+				<span>
+					Chandigarh
+				</span>
 			</a>
 		</div>
 	</div>
