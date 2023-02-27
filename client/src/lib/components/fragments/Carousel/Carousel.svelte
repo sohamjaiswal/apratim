@@ -7,6 +7,8 @@
 		transform: rotateZ(5deg);
 		& > .image-track {
 			display: flex;
+			overflow-x: hidden;
+			width: fit-content;
 			gap: 4vmin;
 			position: absolute;
 			left: 50%;
@@ -56,11 +58,17 @@
 		const mouseDelta = parseFloat(track.dataset.mouseDownAt) - 
 			((e as MouseEvent).clientX ?? (e as TouchEvent).touches[0].clientX),
 			maxDelta = window.innerWidth / 2;
-		const percentage = (mouseDelta / maxDelta) * -100,
-			nextPercentage = Math.max(
-				Math.min(parseFloat(track.dataset.prevPercentage) + percentage, 0),
-				-100
-			);
+		const percentage = (mouseDelta / maxDelta) * -100;
+		let nextPercentage = Math.max(
+			Math.min(parseFloat(track.dataset.prevPercentage) + percentage, 0),
+			-100);
+		if (nextPercentage <= -75) {
+			// eslint-disable-next-line no-undef
+			track.childNodes.forEach((node: ChildNode) => {
+				const clone: Node = node.cloneNode(true);	
+				track.append(clone);
+			});
+		}
 		track.dataset.percentage = `${nextPercentage}`;
 		track.style.transform = `translate(${nextPercentage}%, -50%)`;
 		track.animate(
