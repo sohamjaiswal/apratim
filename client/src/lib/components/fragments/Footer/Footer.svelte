@@ -106,9 +106,9 @@
 			font-size: 1.3rem;
 			text-transform: uppercase;
 			&>.links {
-				display: block;
 				display: flex;
 				gap: 2vw;
+				flex-wrap: wrap;
 				height: fit-content;
 				&>a {
 					color: #000;
@@ -159,6 +159,19 @@
 			opacity: 1;
 			margin-bottom: 0;
 		}
+	}
+	@media screen and (max-width: 1380px) {
+		.links {
+			gap: 10px !important;
+		}
+	}
+	@media screen and (max-width: 960px) {
+		.underFooter {
+			flex-direction: column;
+		}
+	}
+	@media screen and (max-width: 1300px) {
+
 	}
 </style>
 
