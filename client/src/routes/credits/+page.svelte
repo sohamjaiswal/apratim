@@ -7,29 +7,25 @@ import Page from "$lib/components/fragments/Page/Page.svelte";
 
 </script>
 
-<Page>
-
-    <Section>
-		<div class="developers-panel">
-			<div class="header">
-				<h1>
-					Developers 🐵
-				</h1>
+<Section>
+	<div class="developers-panel">
+		<div class="header">
+			<h1>
+				Developers 🐵
+			</h1>
+			<hr />
+		</div>
+		<div class="devs">
+			<h1>
+				👑 Front-End Engineers 👑
 				<hr />
-			</div>
-			<div class="devs">
-				<h1>
-					👑 Front-End Engineers 👑
-					<hr />
-				</h1>
-				<div class="many-devs">
-					<DevCard {...SohamDetails} />
-				</div>
+			</h1>
+			<div class="many-devs">
+				<DevCard {...SohamDetails} />
 			</div>
 		</div>
-    </Section>
-
-</Page>
+	</div>
+</Section>
 
 <style lang="scss">
 
