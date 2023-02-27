@@ -89,18 +89,17 @@
 </script>
 
 <section>
-	<div class="image-track" bind:this="{track}" data-mouse-down-at="0" data-prev-percentage="0">
+	<div class="image-track" bind:this="{track}" data-mouse-down-at="0" data-prev-percentage="0"
+		on:scroll="{handleScroll}"
+		on:mousemove="{handleMouseMove}"
+		on:touchmove="{handleMouseMove}"
+		on:mouseup="{handleMouseUp}"
+		on:touchend="{handleMouseUp}"
+		on:mousedown="{handleMouseDown}"
+		on:touchstart="{handleMouseDown}"
+	>
 		{#each images as image}
 			<img src="{image}" alt="" class="" draggable="false" />
 		{/each}
 	</div>
 </section>
-<svelte:window
-	on:scroll="{handleScroll}"
-	on:mousemove="{handleMouseMove}"
-	on:touchmove="{handleMouseMove}"
-	on:mouseup="{handleMouseUp}"
-	on:touchend="{handleMouseUp}"
-	on:mousedown="{handleMouseDown}"
-	on:touchstart="{handleMouseDown}"
-/>
