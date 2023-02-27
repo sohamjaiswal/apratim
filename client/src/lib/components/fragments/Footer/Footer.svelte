@@ -11,7 +11,7 @@
 		&>span {
 			position: absolute;
 			left: -20vw;
-			height: 50vh;
+			height: 30vh;
 			width: 140vw;
 			background-color: var(--primary);
 			z-index: -1;
@@ -21,6 +21,7 @@
 			height: 50vh;
 			padding: 10vh 12vw;
 			padding-top: 0;
+			margin-top: -2vh;
 			display: flex;
 			justify-content: space-between;
 			position: relative;
