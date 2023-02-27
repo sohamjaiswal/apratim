@@ -62,6 +62,7 @@
 						color: #000;
 						display: block;
   						position: relative;
+						width: fit-content;
 						&::after {
 							content: '';
   							position: absolute;
