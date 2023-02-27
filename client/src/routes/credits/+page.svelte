@@ -31,6 +31,7 @@ import Page from "$lib/components/fragments/Page/Page.svelte";
 
     hr {
 		width: 100%;
+		justify-content: center;
 	}
 	.wraps {
 		flex-wrap: wrap;

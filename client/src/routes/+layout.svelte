@@ -21,7 +21,7 @@
 	}
 
 	#blob {
-		background: linear-gradient(to right, rgb(255, 85, 0), rgb(255, 63, 95));
+		background: linear-gradient(to right, var(--highlight), var(--highlight-hover));
 		height: 500px;
 		aspect-ratio: 1;
 		position: absolute;
@@ -82,7 +82,6 @@
 
 <script lang="ts">
 	let m = { x: 0, y: 0 };
-	let p = { x: 0, y: 0 };
 
 	// import type {IPageProps} from '$lib/types/page.types'
 	import Navbar from '$lib/components/fragments/Navbar/Navbar.svelte';
@@ -124,6 +123,6 @@
 		<slot />
 	</div>
 </main>
-<footer>
+<footer on:mouseenter="{() => showBlob.update(_ => false)}" on:mouseleave="{() => showBlob.update(_ => true)}" >
 	<Footer />
 </footer>

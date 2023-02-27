@@ -317,6 +317,8 @@
 		Array.from(links.children).forEach((link: Element) => {
 			link.addEventListener('click', () => {
 				let goto: string | null = link.getAttribute('href');
+				overlay.style.display = 'none';
+				addClass = false;
 				if (goto === $page.url.pathname) {
 					overlay.style.display = 'none';
 					addClass = false;
