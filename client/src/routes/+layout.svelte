@@ -82,14 +82,14 @@
 	let m = { x: 0, y: 0 };
 	let p = { x: 0, y: 0 };
 
-	import type { IPageProps } from '../../../types/page.types';
-	import Navbar from '../Navbar/Navbar.svelte';
-	import Footer from '../Footer/Footer.svelte';
+	// import type {IPageProps} from '$lib/types/page.types'
+	import Navbar from '$lib/components/fragments/Navbar/Navbar.svelte';
+	import Footer from '$lib/components/fragments/Footer/Footer.svelte';
 
 	 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-	 interface $$Props extends IPageProps{}
+	// interface $$Props extends IPageProps{}
 
-	export let showBlob = true
+	let showBlob = true
 
 	let blob: HTMLElement;
 

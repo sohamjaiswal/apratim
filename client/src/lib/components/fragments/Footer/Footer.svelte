@@ -1,5 +1,5 @@
 <style lang="scss">
-	footer {
+	.footer {
 		position: relative;
 		height: 65vh;
 		width: 100vw;
@@ -194,7 +194,7 @@
 	})
 </script>
 
-<footer bind:this={footer} data-previous-scroll-pos=0 >
+<div class="footer" bind:this={footer} data-previous-scroll-pos=0 >
 	<span bind:this={fbr}></span>
 	<div class="content">
 		<div class="maps">
@@ -244,4 +244,4 @@
 			</div>
 		</div>
 	</div>
-</footer>
+</div>
