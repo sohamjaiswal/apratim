@@ -5,7 +5,7 @@
 	import Page from "$lib/components/fragments/Page/Page.svelte";
 	import type { IGlossyCard } from "$lib/types/glossy-card.types";
 
-    let showBlob = true;
+    import {showBlob} from '../store'
 
     const cards: IGlossyCard[] = [
         {
@@ -46,19 +46,17 @@
 
 </script>
 
-<Page bind:showBlob={showBlob}>
-    <Section>
-        <div class="heading">
-            <h1>
-                Sponsors
-                <hr />
-            </h1>
-        </div>
-        <div class="glossyCardContainer" on:mouseenter="{() => showBlob = false}" on:mouseleave="{() => showBlob = true}">
-            <GlossyCards cards={cards} />
-        </div>
-    </Section>
-</Page>
+<Section>
+    <div class="heading">
+        <h1>
+            Sponsors
+            <hr />
+        </h1>
+    </div>
+    <div class="glossyCardContainer" on:mouseenter="{() => showBlob.update(_ => false)}" on:mouseleave="{() => showBlob.update(_ => true)}">
+        <GlossyCards cards={cards} />
+    </div>
+</Section>
 
 <style lang="scss">
 

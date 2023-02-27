@@ -16,10 +16,12 @@
 		color: #fff;
 		scroll-behavior: smooth;
 		align-items: center;
+        margin-top: 175px;
+        margin-bottom: 175px;
 	}
 
 	#blob {
-		background: linear-gradient(to right, rgb(255, 85, 0), rgb(255, 63, 95));
+		background: linear-gradient(to right, var(--highlight), var(--highlight-hover));
 		height: 500px;
 		aspect-ratio: 1;
 		position: absolute;
@@ -76,25 +78,25 @@
 			display: none;
 		}
 	}
-
-	.headerMargin {
-		margin-top: 175px;
-	}
 </style>
 
 <script lang="ts">
 	let m = { x: 0, y: 0 };
-	let p = { x: 0, y: 0 };
 
-	import type { IPageProps } from '../../../types/page.types';
-	import Navbar from '../Navbar/Navbar.svelte';
-	import Footer from '../Footer/Footer.svelte';
+	// import type {IPageProps} from '$lib/types/page.types'
+	import Navbar from '$lib/components/fragments/Navbar/Navbar.svelte';
+	import Footer from '$lib/components/fragments/Footer/Footer.svelte';
 
-	 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-	 interface $$Props extends IPageProps{}
+    import {showBlob} from './store.js'
 
-	export let showBlob = true
-	export let headerMargin = true
+	// eslint-disable-next-line @typescript-eslint/no-empty-interface
+	// interface $$Props extends IPageProps{}
+
+    let liveShowBlob: boolean
+
+    showBlob.subscribe(value => {
+        liveShowBlob = value
+    })
 
 	let blob: HTMLElement;
 
@@ -115,12 +117,12 @@
 <header>
 	<Navbar />
 </header>
-<main on:mousemove="{handleMouseMove}" class:headerMargin={headerMargin}>
-	<div id="blob" bind:this="{blob}" class:showBlob={showBlob}></div>
+<main on:mousemove="{handleMouseMove}">
+	<div id="blob" bind:this="{blob}" class:showBlob={liveShowBlob}></div>
 	<div class="content">
 		<slot />
 	</div>
 </main>
-<footer>
+<footer on:mouseenter="{() => showBlob.update(_ => false)}" on:mouseleave="{() => showBlob.update(_ => true)}" >
 	<Footer />
 </footer>
