@@ -55,6 +55,13 @@
 	import Page from "$lib/components/fragments/Page/Page.svelte";
 
 	import logo from "$lib/assets/logo.png";
+
+	let images = [
+		"http://ccet.ac.in/tnp/images/banner11.jpg",
+		"https://admissionadvice.in/wp-content/uploads/2020/11/Chandigarh-College-of-Engineering-and-Technology-CCET-Chandigarh.jpeg",
+		"https://ccet.ac.in/img/canteen/cafeteria-1.jpg",
+		"https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2018/02/22/Pictures/_3e183b5e-17b9-11e8-a4d7-7f47b8de9439.jpg"
+	]
 </script>
 
 <Page>
@@ -70,7 +77,7 @@
 	</Section>
 	<Section>
 		<div class="carousel">
-			<Carousel />
+			<Carousel images={images} />
 		</div>
 		<div class="mobileCarousel">
 			<MobileCarousel />
