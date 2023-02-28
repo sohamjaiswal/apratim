@@ -46,6 +46,7 @@
             backdrop-filter: blur(100px);
             padding: 2vh 2vw;
             font-weight: 500;
+            font-size: 1.3rem;
             transition: 0.4s;
             display: flex;
             border-radius: 18px;
@@ -57,11 +58,11 @@
                 background-color: rgba(255, 255, 255, 0.5);
             }
             &>.arrow {
-                width: 20px;
-                height: 20px;
+                width: 25px;
+                height: 25px;
                 &>img {
-                    width: 20px;
-                    height: 20px;
+                    width: 25px;
+                    height: 25px;
                     object-fit: cover;
                     object-position: center;
                     filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(228deg) brightness(108%) contrast(101%);
@@ -76,6 +77,7 @@
             padding: 0 2vw;
             overflow: hidden;
             transition: max-height 0.2s ease-out;
+            font-size: 1.1rem;
         }
     }
 </style>
