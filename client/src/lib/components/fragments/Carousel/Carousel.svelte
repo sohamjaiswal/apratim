@@ -4,7 +4,8 @@
     // eslint-disable-next-line @typescript-eslint/no-empty-interface
     interface $$Props extends ICarouselProps{}
 
-    export let images: $$Props['images']
+    export let images: $$Props['images'];
+    $: imagesReactive = images;
     let carousel: HTMLElement;
     
     const updateCarousel = () => {
@@ -13,17 +14,18 @@
         carousel.style.translate = `${-window.scrollY}px`;
         const firstImage: Element = carouselImages[0];
         if (firstImage.getBoundingClientRect().x <= -width) {
-            const firstImageUrl: string | undefined = images.shift();
+            const firstImageUrl: string | undefined = imagesReactive.shift();
             if (!firstImageUrl) return;
-            images.push(firstImageUrl);
-            console.log(images);
+            imagesReactive.push(firstImageUrl);
+            imagesReactive = imagesReactive;
+            console.log(imagesReactive);
         }
     }
 </script>
 
 <div class="carousel-container" bind:this={carousel}>
 
-    {#each images as image, index}
+    {#each imagesReactive as image, index}
     
     <img src={image} alt="ccet" class="carouselImages" />
     
