@@ -1,6 +1,17 @@
 <script type="ts">
     import Heading from "$lib/components/ui/Heading/Heading.svelte";
     import Accordian from "$lib/components/ui/Accordian/Accordian.svelte";
+
+    let faq = [
+        {
+            question: 'How to register?',
+            answer: "Well... we also don't know, lol!"
+        },
+        {
+            question: 'Address of CCET?',
+            answer: "Sector 26, Chandigarh"
+        }
+    ];
 </script>
 
 <section>
@@ -12,7 +23,9 @@
             Frequently Asked Questions:
         </div>
         <div class="faqContent">
-            <Accordian title="How to register for a competition?" desc="Well... We also don't know, lol!" />
+            {#each faq as {question, answer}}
+                <Accordian title={question} desc={answer} />
+            {/each}
         </div>
     </div>
     <div class="content">
@@ -24,7 +37,23 @@
 
 <style lang="scss">
     section {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        gap: 5vh;
+        margin-bottom: 5vh;
+        &>.faq {
+            display: flex;
+            flex-direction: column;
+            gap: 1vw;
+            &>.subheading {
+                font-size: 4vh;
+            }
+            &>.faqContent {
+                display: flex;
+                flex-direction: column;
+                gap: 1vw;
+            }
+        }
         &>.content {
             width: 100%;
             display: flex;

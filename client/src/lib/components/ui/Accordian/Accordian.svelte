@@ -4,7 +4,7 @@
     let acc: HTMLElement;
 
     const expand = () => {
-        acc.classList.toggle("active");
+        acc.classList.toggle("activeAccordian");
         const panel = acc.nextElementSibling as HTMLElement;
         if (!panel) return;
         if (panel.style.maxHeight !== '0px') {
