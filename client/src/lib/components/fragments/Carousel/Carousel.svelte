@@ -42,14 +42,17 @@
         &::-webkit-scrollbar {
             display: none;
         }
+        scroll-behavior: smooth;
+        scroll-snap-type: mandatory;
 
         img {
             image-rendering: optimizeSpeed;
             object-fit: cover;
             height: 100%;
-            width: 40%;
+            width: 50%;
             border-radius: 16px;
         }
+        scroll-snap-align: center;
     }
 
 </style>
