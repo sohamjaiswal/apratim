@@ -49,7 +49,9 @@
             gap: 5vh;
             &>.maps {
                 width: 100%;
+                height: 50vh;
                 &>iframe {
+                    height: inherit;
                     width: inherit;
                     border-radius: 24px;
                 }
@@ -74,6 +76,16 @@
                         }
                     }
                 }
+            }
+        }
+    }
+    @media screen and (max-width: 550px) {
+        .formContent {
+            display: flex !important;
+            flex-direction: column;
+            gap: 2vh !important;
+            &>.left {
+                gap: 2vh !important;
             }
         }
     }
