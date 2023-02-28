@@ -1,18 +1,19 @@
 <script type="ts">
     import Heading from "$lib/components/ui/Heading/Heading.svelte";
-    import TextInput from "$lib/components/ui/TextInput/TextInput.svelte";
-    import Button from "$lib/components/ui/Button/Button.svelte";
-
-    let name: string;
-    let mobile: string;
-    let email: string;
-    let message: string;
-    let submit: () => void;
+    import Accordian from "$lib/components/ui/Accordian/Accordian.svelte";
 </script>
 
 <section>
     <div class="heading">
         <Heading title="Get In Touch" />
+    </div>
+    <div class="faq">
+        <div class="subheading">
+            Frequently Asked Questions:
+        </div>
+        <div class="faqContent">
+            <Accordian title="How to register for a competition?" desc="Well... We also don't know, lol!" />
+        </div>
     </div>
     <div class="content">
         <div class="maps">
