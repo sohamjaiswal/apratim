@@ -64,23 +64,15 @@
 	]
 </script>
 
-<Page>
-	<Section>
-		<div class="sect1">
-			<div class="back">
-				<img class="logo" src="{logo}" alt="apratim logo" />
-			</div>
-			<div class="fore">
-				<h1>Apratim is here.</h1>
-			</div>
+<Section>
+	<div class="sect1">
+		<div class="back">
+			<img class="logo" src="{logo}" alt="apratim logo" />
 		</div>
 	</Section>
 	<Section>
 		<div class="carousel">
 			<Carousel images={images} />
-		</div>
-		<div class="mobileCarousel">
-			<MobileCarousel />
-		</div>
-	</Section>
-</Page>
+     </div>
+   </Section>
+

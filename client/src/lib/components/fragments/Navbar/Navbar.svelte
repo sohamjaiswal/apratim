@@ -288,6 +288,26 @@
 			width: 85vw !important;
 		}
 	}	
+	@media screen and (max-width: 650px) {
+		:global(.sectionBackground) {
+			border-radius: 24px !important;
+			background-color: rgba(255, 255, 255, 0.3) !important;
+			backdrop-filter: blur(50px) !important;
+		}
+		section {
+			width: auto !important;
+			padding: 2vh 5vw !important;
+			margin: 2vh 5vw !important;
+			transition: all 0.2s ease;
+			&>.hamburger {
+				height: 70px;
+				width: 70px;
+			}
+			&>.logo {
+				height: 80px !important;
+			}
+		}
+	}
 	@media screen and (max-width: 345px) {
 		.hamburger {
 			width: 60px !important;
@@ -313,16 +333,35 @@
 	let overlay: HTMLElement;
 	let addClass = false;
 	let links: HTMLElement;
+	let footerSec: HTMLElement;
 	onMount(() => {
 		Array.from(links.children).forEach((link: Element) => {
 			link.addEventListener('click', () => {
 				let goto: string | null = link.getAttribute('href');
+				overlay.style.display = 'none';
+				addClass = false;
 				if (goto === $page.url.pathname) {
 					overlay.style.display = 'none';
 					addClass = false;
 				}
 			})
-		})
+		});
+		const winHeight: number = window.innerHeight;
+		const footer: HTMLElement = document.getElementsByTagName('footer')[0];
+		window.onscroll = () => {
+			// Bring background in view when scrolled a little bit.
+			if (window.scrollY > 600) {
+				footerSec.classList.add('sectionBackground');
+			} else {
+				footerSec.classList.remove('sectionBackground');
+			}
+			// Only bring background when footer is in view.
+			// if (footer.getBoundingClientRect().y <= winHeight) {
+			// 	footerSec.classList.add('sectionBackground');
+			// } else {
+			// 	footerSec.classList.remove('sectionBackground');
+			// }
+		}
 	})
 	const toggleNavBar = () => {
 		if (overlay.style.display === 'none') {
@@ -336,7 +375,7 @@
 	}
 </script>
 
-<section>
+<section bind:this={footerSec}>
 	<div class="logo">
 		<img src={logo} alt="Apratim Logo">
 	</div>
