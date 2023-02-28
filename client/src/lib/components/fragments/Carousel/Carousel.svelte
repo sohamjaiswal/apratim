@@ -5,16 +5,23 @@
     interface $$Props extends ICarouselProps{}
 
     export let images: $$Props['images']
+    let carousel: HTMLElement;
     
     const updateCarousel = () => {
+        const width: number = (carousel.childNodes.item(0) as Element).clientWidth;
         const carouselImages = document.querySelectorAll('.carouselImages');
-        Array.from(carouselImages).forEach((image, i) => {
-            console.log(`image ${i}`, image.getBoundingClientRect().x)
-        })
+        carousel.style.translate = `${-window.scrollY}px`;
+        const firstImage: Element = carouselImages[0];
+        if (firstImage.getBoundingClientRect().x <= -width) {
+            const firstImageUrl: string | undefined = images.shift();
+            if (!firstImageUrl) return;
+            images.push(firstImageUrl);
+            console.log(images);
+        }
     }
 </script>
 
-<div class="carousel-container">
+<div class="carousel-container" bind:this={carousel}>
 
     {#each images as image, index}
     
@@ -33,7 +40,7 @@
         display: flex;
         gap: 32px;
         height: 65vh;
-        width: 110vw;
+        width: fit-content;
         // background-color: red;
         transform: rotate3d(1, 1, 1, 5deg) translate3d(0, 0, 0);
         overflow-x: scroll;
@@ -48,8 +55,9 @@
         img {
             image-rendering: optimizeSpeed;
             object-fit: cover;
+            object-position: 0%;
             height: 100%;
-            width: 50%;
+            width: 50vw;
             border-radius: 16px;
         }
         scroll-snap-align: center;
