@@ -39,4 +39,42 @@
 </section>
 
 <style lang="scss">
+    section {
+        display: block;
+        &>.content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5vh;
+            &>.maps {
+                width: 100%;
+                &>iframe {
+                    width: inherit;
+                    border-radius: 24px;
+                }
+            }
+            &>.form {
+                width: inherit;
+                &>form {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 5vh;
+                    width: inherit;
+                    &>.formContent {
+                        display: grid;
+                        grid-template-columns: 47.5% 47.5%;
+                        gap: 5%;
+                        width: 100%;
+                        &>.left {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                        }
+                    }
+                }
+            }
+        }
+    }
 </style>
