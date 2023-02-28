@@ -1,29 +1,29 @@
 <script lang="ts">
 	import type { ICarouselProps } from "$lib/types/carousel.types";
 
-
     // eslint-disable-next-line @typescript-eslint/no-empty-interface
     interface $$Props extends ICarouselProps{}
 
     export let images: $$Props['images']
     
     const updateCarousel = () => {
-        const carouselImages = document.getElementsByTagName('img')
+        const carouselImages = document.querySelectorAll('.carouselImages');
         Array.from(carouselImages).forEach((image, i) => {
-            console.log(`image ${i}`, image.getBoundingClientRect())
+            console.log(`image ${i}`, image.getBoundingClientRect().x)
         })
     }
 </script>
 
-<div class="carousel-container" on:scroll="{updateCarousel}">
+<div class="carousel-container">
 
     {#each images as image, index}
     
-    <img src={image} alt="ccet" />
+    <img src={image} alt="ccet" class="carouselImages" />
     
     {/each}
 
 </div>
+<svelte:window on:scroll="{updateCarousel}"></svelte:window>
 
 <style lang="scss">
 
