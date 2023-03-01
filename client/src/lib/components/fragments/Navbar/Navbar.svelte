@@ -330,6 +330,7 @@
 	import logo from "$lib/assets/logo.png";
 	import { onMount } from "svelte";
 	import { page } from "$app/stores";
+	import Button from "$lib/components/ui/Button/Button.svelte";
 	let overlay: HTMLElement;
 	let addClass = false;
 	let links: HTMLElement;
@@ -373,11 +374,21 @@
 			addClass = false;
 		}
 	}
+	const gotoRegister = () => {
+		// open/goto register page.
+	}
+	const gotoLogin = () => {
+		// open/goto login page.
+	}
 </script>
 
 <section bind:this={footerSec}>
 	<div class="logo">
 		<img src={logo} alt="Apratim Logo">
+	</div>
+	<div class="cta">
+		<Button variant="secondary" label="Login" onClick={gotoLogin} size="large" ></Button>
+		<Button variant="primary" label="Register" onClick={gotoRegister} size="large" ></Button>
 	</div>
 	<div class="hamburger {addClass ? 'close' : ''}" on:keypress={toggleNavBar} on:click={toggleNavBar}>
 		<div>
