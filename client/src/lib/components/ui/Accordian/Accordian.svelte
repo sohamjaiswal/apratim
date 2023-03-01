@@ -1,5 +1,11 @@
 <script type="ts">
     import downArrow from '$lib/assets/angle-down-solid.svg';
+    import type { IAccordian } from './Accordian.types';
+
+    // eslint-disable-next-line @typescript-eslint/no-empty-interface
+    interface $$Props extends IAccordian{};
+    export let title: $$Props['title'];
+    export let desc: $$Props['desc'];
 
     let acc: HTMLElement;
 
@@ -13,9 +19,6 @@
             panel.style.maxHeight = `${panel.scrollHeight}px`;
         }
     }
-
-    export let title: string;
-    export let desc: string;
 </script>
 
 <div class="container">
