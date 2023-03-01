@@ -39,7 +39,9 @@
         background-color: rgba(255, 255, 255, 0.5) !important;
     }
     .container {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        gap: 1vw;
         width: 100%;
         &>.accordian {
             background-color: rgba(255, 255, 255, 0.3);
