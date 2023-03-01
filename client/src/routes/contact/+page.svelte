@@ -104,7 +104,7 @@
                 }
                 &>.icon {
                     background-color: var(--primary);
-                    padding: 2vh 1vw;
+                    padding: 20px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -123,6 +123,28 @@
             gap: 2vh !important;
             &>.left {
                 gap: 2vh !important;
+            }
+        }
+    }
+    @media screen and (max-width: 920px) {
+        .contact {
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+    }
+    @media screen and (max-width: 470px) {
+        .contact {
+            &>div {
+                &>a {
+                    font-size: 1.5rem !important;
+                }
+                &>.icon {
+                    padding: 10px !important;
+                    &>img {
+                        height: 20px !important;
+                    }
+                }
             }
         }
     }
