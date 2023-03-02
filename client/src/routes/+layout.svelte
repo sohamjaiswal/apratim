@@ -86,6 +86,8 @@
 	// import type {IPageProps} from '$lib/types/page.types'
 	import Navbar from '$lib/components/fragments/Navbar/Navbar.svelte';
 	import Footer from '$lib/components/fragments/Footer/Footer.svelte';
+	import PageTransitions from '$lib/components/ui/PageTransitions/PageTransitions.svelte';
+	import { page } from '$app/stores';
 
     import {showBlob} from './store.js'
 
@@ -120,7 +122,9 @@
 <main on:mousemove="{handleMouseMove}">
 	<div id="blob" bind:this="{blob}" class:showBlob={liveShowBlob}></div>
 	<div class="content">
-		<slot />
+		<PageTransitions refresh={$page.route.id}>
+			<slot />
+		</PageTransitions>
 	</div>
 </main>
 <footer on:mouseenter="{() => showBlob.update(_ => false)}" on:mouseleave="{() => showBlob.update(_ => true)}" >
