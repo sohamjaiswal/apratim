@@ -41,6 +41,7 @@
 
 	.content {
 		padding-bottom: 48px;
+		overflow: hidden;
 		> * {
 			scroll-snap-align: start;
 		}
