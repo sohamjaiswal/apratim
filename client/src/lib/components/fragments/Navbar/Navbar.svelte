@@ -2,7 +2,6 @@
 	section {
 		width: 100vw;
 		height: fit-content;
-		cursor: pointer;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -11,6 +10,7 @@
 			z-index: 1001;
 			user-select: none;
 			height: 120px;
+			cursor: pointer;
 			&>img {
 				height: inherit;
 			}
@@ -24,6 +24,7 @@
 			justify-content: center;
 			align-items: center;
 			z-index: 1001;
+			cursor: pointer;
 			&:hover {
 				transform: scale(0.96);
 				transition: all 0.2s ease;
@@ -376,9 +377,9 @@
 </script>
 
 <section bind:this={footerSec}>
-	<div class="logo">
+	<a href="/" class="logo">
 		<img src={logo} alt="Apratim Logo">
-	</div>
+	</a>
 	<div class="hamburger {addClass ? 'close' : ''}" on:keypress={toggleNavBar} on:click={toggleNavBar}>
 		<div>
 			<span class="transition1"></span>
