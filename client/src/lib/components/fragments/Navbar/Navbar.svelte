@@ -435,8 +435,8 @@
 			<a href="/credits">
 				<StrikethroughText label="organizers" />
 			</a>
-			<a href="/faq">
-				<StrikethroughText label="faq" />
+			<a href="/sponsors">
+				<StrikethroughText label="sponsors" />
 			</a>
 			<a href="/contact">
 				<StrikethroughText label="contact us" />
