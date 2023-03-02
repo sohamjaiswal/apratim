@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { IButton } from './Button.types';
+    import type { IButton } from '$lib/types/Button.types';
     // eslint-disable-next-line @typescript-eslint/no-empty-interface
     interface $$Props extends IButton{};
     export let variant: $$Props['variant'];
