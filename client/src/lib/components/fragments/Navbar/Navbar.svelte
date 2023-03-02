@@ -376,9 +376,9 @@
 </script>
 
 <section bind:this={footerSec}>
-	<div class="logo">
+	<a href="/" class="logo">
 		<img src={logo} alt="Apratim Logo">
-	</div>
+	</a>
 	<div class="hamburger {addClass ? 'close' : ''}" on:keypress={toggleNavBar} on:click={toggleNavBar}>
 		<div>
 			<span class="transition1"></span>
