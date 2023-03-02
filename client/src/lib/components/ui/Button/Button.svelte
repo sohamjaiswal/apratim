@@ -37,5 +37,13 @@
                 color: #fff;
             }
         }
+        &.medium {
+            font-size: 1.1rem;
+            padding: 13px 25px;
+        }
+        &.small {
+            font-size: 1rem;
+            padding: 10px 20px;
+        }
     }
 </style>
