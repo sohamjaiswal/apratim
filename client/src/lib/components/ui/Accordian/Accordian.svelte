@@ -1,6 +1,6 @@
 <script type="ts">
     import downArrow from '$lib/assets/angle-down-solid.svg';
-    import type { IAccordian } from './Accordian.types';
+    import type { IAccordian } from '$lib/types/Accordian.types';
 
     // eslint-disable-next-line @typescript-eslint/no-empty-interface
     interface $$Props extends IAccordian{};
