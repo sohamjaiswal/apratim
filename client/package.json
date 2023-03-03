@@ -16,12 +16,13 @@
 	},
 	"devDependencies": {
 		"@babel/core": "^7.20.2",
-		"@storybook/addon-essentials": "^7.0.0-beta.54",
-		"@storybook/addon-interactions": "^7.0.0-beta.54",
-		"@storybook/addon-links": "^7.0.0-beta.54",
-		"@storybook/blocks": "^7.0.0-alpha.8",
-		"@storybook/svelte": "^7.0.0-beta.54",
-		"@storybook/sveltekit": "^7.0.0-beta.54",
+		"@storybook/addon-essentials": "^7.0.0-beta.60",
+		"@storybook/addon-interactions": "^7.0.0-beta.60",
+		"@storybook/addon-links": "^7.0.0-beta.60",
+		"@storybook/addon-mdx-gfm": "7.0.0-beta.60",
+		"@storybook/blocks": "^7.0.0-beta.60",
+		"@storybook/svelte": "^7.0.0-beta.60",
+		"@storybook/sveltekit": "^7.0.0-beta.60",
 		"@storybook/testing-library": "^0.0.14-next.1",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "1.8.4",
@@ -39,7 +40,7 @@
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"sass": "^1.56.1",
-		"storybook": "^7.0.0-beta.54",
+		"storybook": "^7.0.0-beta.60",
 		"storybook-dark-mode": "^2.0.4",
 		"svelte": "^3.53.1",
 		"svelte-check": "^2.7.1",
@@ -51,7 +52,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@storybook/addon-svelte-csf": "^2.0.11",
+		"@storybook/addon-svelte-csf": "^3.0.0-next.3",
 		"axios": "^1.2.0",
 		"swiper": "^9.0.5"
 	}
