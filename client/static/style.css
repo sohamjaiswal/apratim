@@ -22,7 +22,7 @@
 	/* color for when the primary color is selected */
 	--secondary-alt: white;
 	--primary: #a374ff;
-	--primary-hover: rgb(255, 109, 134);
+	--primary-hover: rgb(152, 101, 253);
 	--heading: #fff;
 	/* color to contrast secondary on bg */
 	--primary-alt: white;
@@ -45,8 +45,8 @@
 	--secondary-hover: #5d5d5d;
 	/* color for when the primary color is selected */
 	--secondary-alt: white;
-	--primary: #a374ff;
-	--primary-hover: rgb(255, 109, 134);
+	--primary: rgb(163, 116, 255);
+	--primary-hover: rgb(152, 101, 253);
 	/* color to contrast secondary on bg */
 	--primary-alt: white;
 	--body-background: rgb(67, 67, 67);
@@ -89,4 +89,26 @@ body {
 	color: var(--body-text);
 	background-color: #1d1d1f;
 	overflow-x: hidden;
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: rgb(67, 67, 67);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: var(--primary);
+	border-radius: 24px;
+	transition: all 0.2s ease;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: var(--primary-hover);
 }
