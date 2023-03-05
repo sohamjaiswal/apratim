@@ -1,5 +1,6 @@
 <script lang="ts">
 	import GlossyCards from '$lib/components/fragments/GlossyCards/GlossyCards.svelte';
+	import Heading from '$lib/components/ui/Heading/Heading.svelte';
 
     import Section from "$lib/components/ui/Section/Section.svelte";
 	import type { IGlossyCard } from "$lib/types/glossy-card.types";
@@ -45,12 +46,7 @@
 </script>
 
 <Section>
-    <div class="heading">
-        <h1>
-            Events
-            <hr />
-        </h1>
-    </div>
+    <Heading title="Events" />
     <div class="glossyCardContainer" on:mouseenter="{() => showBlob.update(_ => false)}" on:mouseleave="{() => showBlob.update(_ => true)}">
         <GlossyCards cards={cards} />
     </div>
