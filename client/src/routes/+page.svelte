@@ -50,6 +50,7 @@
 <!-- Landing Page 🤌 -->
 <script lang="ts">
 	import Section from "$lib/components/ui/Section/Section.svelte";
+	import GoDown from "$lib/components/ui/GoDown/GoDown.svelte";
 	import Carousel from "$lib/components/fragments/Carousel/Carousel.svelte";
 	import MobileCarousel from "$lib/components/fragments/mobileCarousel/MobileCarousel.svelte";
 	import Page from "$lib/components/fragments/Page/Page.svelte";
@@ -65,13 +66,14 @@
 		<div class="fore">
 			<h1>Apratim is here.</h1>
 		</div>
+		<GoDown />
 	</div>
 </Section>
-<Section>
+<!-- <Section> -->
 	<!-- <div class="carousel">
 		<Carousel />
 	</div>
 	<div class="mobileCarousel">
 		<MobileCarousel />
 	</div> -->
-</Section>
+<!-- </Section> -->
