@@ -68,10 +68,10 @@
 	</div>
 </Section>
 <Section>
-	<div class="carousel">
+	<!-- <div class="carousel">
 		<Carousel />
 	</div>
 	<div class="mobileCarousel">
 		<MobileCarousel />
-	</div>
+	</div> -->
 </Section>
