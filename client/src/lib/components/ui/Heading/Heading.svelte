@@ -6,6 +6,17 @@
         align-items: center;
         justify-content: center;
         padding: 6vh 0;
+        &>svg {
+            &>text {
+                font-size: 6rem;
+                @media screen and (max-width: 760px) {
+                    font-size: 4rem !important;
+                }
+                @media screen and (max-width: 500px) {
+                    font-size: 2rem !important;
+                }
+            }
+        }
     }
     .text-line text {
         stroke-dasharray: 500;
@@ -48,6 +59,6 @@
 
 <section>
     <svg stroke="#fff" stroke-width="2" bind:this={svgElem} class="text-line">
-        <text x="50" y="90" fill="none" font-size = "100">{title}</text>
+        <text x="50" y="90" fill="none">{title}</text>
     </svg>
 </section>
