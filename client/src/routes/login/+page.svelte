@@ -4,7 +4,6 @@
 
 	let email: string;
 	let password: string;
-	let hi = 10;
 
 	const onClick = async () => {
 		const login = await axios.post("/users/login", { email, password });
