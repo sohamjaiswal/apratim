@@ -152,9 +152,11 @@
 			height: 100px;
 			transform: translate(-50%, 0);
 			opacity: 1;
+			z-index: 100;
 		}
 		99% {
 			opacity: 1;
+			z-index: 100;
 		}
 		100% {
 			bottom: 50%;
@@ -162,6 +164,7 @@
 			width: 300px;
 			height: 300px;
 			opacity: 0;
+			z-index: -100;
 		}
 	}
 </style>
