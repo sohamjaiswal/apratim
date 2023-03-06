@@ -1,5 +1,5 @@
 <style lang="scss">
-	section {
+	.container {
 		&>.sect1 {
 			display: flex;
 			cursor: default;
@@ -195,34 +195,36 @@
 </script>
 
 <Section>
-	<div class="sect1">
-		<div class="bird">
-			<img src="{flyingPheonix}" alt="Flying Pheonix">
-		</div>
-		<div class="back">
-			<img class="logo" src="{logoTransparent}" alt="apratim logo" />
-		</div>
-		<div class="fore">
-			Apratim is here.
-			<div class="cta">
-				<Button variant="secondary" label="Login" onClick={gotoLogin} size="large" ></Button>
-				<Button variant="primary" label="Register" onClick={gotoRegister} size="large" ></Button>
+	<div class="container">
+		<div class="sect1">
+			<div class="bird">
+				<img src="{flyingPheonix}" alt="Flying Pheonix">
 			</div>
-		</div>
-		<GoDown />
-	</div>
-	<div class="sponsors">
-		<div class="container">
-			<div class="titleSponsor">
-				<img src="{titleSponsor}" alt="Bharat Bass Festival" />
+			<div class="back">
+				<img class="logo" src="{logoTransparent}" alt="apratim logo" />
 			</div>
+			<div class="fore">
+				Apratim is here.
+				<div class="cta">
+					<Button variant="secondary" label="Login" onClick={gotoLogin} size="large" ></Button>
+					<Button variant="primary" label="Register" onClick={gotoRegister} size="large" ></Button>
+				</div>
+			</div>
+			<GoDown />
 		</div>
-		<div class="container">
-			<div class="platinumSponsor"><img src="{plat1}" alt="Platinum 1" /></div>
-			<div class="platinumSponsor"><img src="{plat2}" alt="Platinum 2" /></div>
-			<div class="platinumSponsor"><img src="{plat3}" alt="Platinum 3" /></div>
-			<div class="platinumSponsor"><img src="{plat4}" alt="Platinum 4" /></div>
-			<div class="platinumSponsor"><img src="{plat5}" alt="Platinum 5" /></div>
+		<div class="sponsors">
+			<div class="container">
+				<div class="titleSponsor">
+					<img src="{titleSponsor}" alt="Bharat Bass Festival" />
+				</div>
+			</div>
+			<div class="container">
+				<div class="platinumSponsor"><img src="{plat1}" alt="Platinum 1" /></div>
+				<div class="platinumSponsor"><img src="{plat2}" alt="Platinum 2" /></div>
+				<div class="platinumSponsor"><img src="{plat3}" alt="Platinum 3" /></div>
+				<div class="platinumSponsor"><img src="{plat4}" alt="Platinum 4" /></div>
+				<div class="platinumSponsor"><img src="{plat5}" alt="Platinum 5" /></div>
+			</div>
 		</div>
 	</div>
 </Section>
