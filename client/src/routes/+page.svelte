@@ -1,120 +1,124 @@
 <style lang="scss">
-	.sponsors {
-		position: absolute;
-		bottom: 3vh;
-		right: 2vw;
-		display: grid;
-		grid-template-rows: auto auto;
-		row-gap: 5vh;
-		width: fit-content;
-		height: fit-content;
-		& > div {
+	section {
+		&>.sect1 {
 			display: flex;
-			gap: 2vw;
-			align-items: center;
-			justify-content: flex-end;
-			& > div {
-				position: relative;
-				transition: all 0.2s ease;
-				cursor: pointer;
-				&::before {
-					content: "";
-					position: absolute;
+			cursor: default;
+			&>.bird {
+				position: absolute;
+				height: 100px;
+				width: 100px;
+				bottom: -100px;
+				left: 50%;
+				transform: translate(-50%, 0);
+				animation: PheonixComingUp 1.5s ease-in forwards;
+				z-index: 100;
+				&>img {
+					width: inherit;
+					height: inherit;
+				}
+			}
+			&>.back {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translateX(-50%) translateY(-50%);
+				width: 60%;
+				height: 90vh;
+				// background-image: url('$lib/assets/ccetImages/building.jpg');
+				background-repeat: no-repeat;
+				background-size: cover;
+				& > .logo {
+					aspect-ratio: 1;
 					width: 100%;
 					height: 100%;
-					top: -50%;
-					left: -50%;
-					z-index: -1;
-					border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-					background-image: var(--blob-bg);
-					translate: 50% 50%;
-					animation: rotateBlob 15s forwards infinite;
 				}
-				&:hover {
-					scale: 1.2;
-				}
-				& > img {
-					position: absolute;
-					left: 50%;
-					top: 50%;
-					transform: translate(-50%, -50%);
-					max-width: 80%;
-					max-height: 65%;
-				}
-				&.titleSponsor {
-					width: 300px;
-					height: 300px;
-					& > img {
-						transform: translate(-55%, -55%);
-					}
-				}
-				&.platinumSponsor {
-					width: 100px;
-					height: 100px;
-					& > img {
-						transform: translate(-54%, -55%);
-					}
+			}
+			& > .fore {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translateX(-50%) translateY(-50%);
+				font-size: 7rem;
+				font-weight: 800;
+				text-align: center;
+				text-shadow: 0px 5px 50px black;
+ 				// background: var(--landing-heading-bg);
+				// -webkit-text-fill-color: transparent;
+				// -webkit-background-clip: text;
+				// background-clip: text;
+				letter-spacing: -.06em;
+				line-height: 1.5;
+				&>.cta {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					gap: 2vw;
 				}
 			}
 		}
-	}
-	.sect1 {
-		display: flex;
-		cursor: default;
-		&>.bird {
+		&>.sponsors {
 			position: absolute;
-			height: 100px;
-			width: 100px;
-			bottom: -100px;
-			left: 50%;
-			transform: translate(-50%, 0);
-			animation: PheonixComingUp 1.5s ease-in forwards;
-			z-index: 100;
-			&>img {
-				width: inherit;
-				height: inherit;
-			}
-		}
-		& > .fore {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translateX(-50%) translateY(-50%);
-			font-size: 7rem;
-			font-weight: 800;
-			text-align: center;
-			text-shadow: 0px 5px 50px black;
- 			// background: var(--landing-heading-bg);
-			// -webkit-text-fill-color: transparent;
-			// -webkit-background-clip: text;
-			// background-clip: text;
-			letter-spacing: -.06em;
-			line-height: 1.5;
-			&>.cta {
+			bottom: 3vh;
+			right: 2vw;
+			display: grid;
+			grid-template-rows: auto auto;
+			row-gap: 5vh;
+			width: fit-content;
+			height: fit-content;
+			& > div {
 				display: flex;
-				justify-content: center;
-				align-items: center;
 				gap: 2vw;
+				align-items: center;
+				justify-content: flex-end;
+				& > div {
+					position: relative;
+					transition: all 0.2s ease;
+					cursor: pointer;
+					&::before {
+						content: "";
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						top: -50%;
+						left: -50%;
+						z-index: -1;
+						border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+						background-image: var(--blob-bg);
+						translate: 50% 50%;
+						animation: rotateBlob 15s forwards infinite;
+					}
+					&:hover {
+						scale: 1.2;
+					}
+					& > img {
+						position: absolute;
+						left: 50%;
+						top: 50%;
+						transform: translate(-50%, -50%);
+						max-width: 80%;
+						max-height: 65%;
+					}
+					&.titleSponsor {
+						width: 300px;
+						height: 300px;
+						& > img {
+							transform: translate(-55%, -55%);
+						}
+					}
+					&.platinumSponsor {
+						width: 100px;
+						height: 100px;
+						& > img {
+							transform: translate(-54%, -55%);
+						}
+					}
+				}
 			}
-		}
+		}	
 	}
+	
 
-	.back {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translateX(-50%) translateY(-50%);
-		width: 60%;
-		height: 90vh;
-		// background-image: url('$lib/assets/ccetImages/building.jpg');
-		background-repeat: no-repeat;
-		background-size: cover;
-		& > .logo {
-			aspect-ratio: 1;
-			width: 100%;
-			height: 100%;
-		}
-	}
+	
 
 	.mobileCarousel {
 		display: none;
