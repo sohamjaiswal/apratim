@@ -25,6 +25,7 @@
 	--primary-hover: rgb(152, 101, 253);
 	--heading: #fff;
 	--blob-bg: linear-gradient(45deg, #3023ae 0%, #ff0099 100%);
+	--landing-heading-bg: linear-gradient(90deg, #007cf0, #00dfd8);
 	/* color to contrast secondary on bg */
 	--primary-alt: white;
 	--body-background: white;
