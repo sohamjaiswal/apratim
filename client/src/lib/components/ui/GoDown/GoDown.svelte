@@ -10,6 +10,7 @@
         height: 20vw;
         border-radius: 50%;
         cursor: pointer;
+        user-select: none;
         &:hover .container {
             width: 40%;
             height: 40%;
