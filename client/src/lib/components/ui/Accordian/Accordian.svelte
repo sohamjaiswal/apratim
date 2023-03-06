@@ -59,6 +59,12 @@
             align-items: center;
             height: fit-content;
             user-select: none;
+            @media screen and (max-width: 1200px) {
+                padding: 3vh 4vw !important;
+            }
+            @media screen and (max-width: 500px) {
+                font-size: 1.1rem !important;
+            }
             &:hover {
                 background-color: rgba(255, 255, 255, 0.5);
             }
