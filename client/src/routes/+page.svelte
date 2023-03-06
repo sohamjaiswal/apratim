@@ -69,11 +69,11 @@
 			font-size: 7rem;
 			font-weight: 800;
 			text-align: center;
-			// text-shadow: 0px 5px 50px black;
- 			background: var(--landing-heading-bg);
-			-webkit-text-fill-color: transparent;
-			-webkit-background-clip: text;
-			background-clip: text;
+			text-shadow: 0px 5px 50px black;
+ 			// background: var(--landing-heading-bg);
+			// -webkit-text-fill-color: transparent;
+			// -webkit-background-clip: text;
+			// background-clip: text;
 			letter-spacing: -.06em;
 		}
 	}
