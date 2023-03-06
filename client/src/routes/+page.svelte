@@ -75,6 +75,13 @@
 			// -webkit-background-clip: text;
 			// background-clip: text;
 			letter-spacing: -.06em;
+			line-height: 1.5;
+			&>.cta {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 2vw;
+			}
 		}
 	}
 
@@ -133,12 +140,19 @@
 
 	import Section from "$lib/components/ui/Section/Section.svelte";
 	import GoDown from "$lib/components/ui/GoDown/GoDown.svelte";
+	import Button from "$lib/components/ui/Button/Button.svelte";
 	import Carousel from "$lib/components/fragments/Carousel/Carousel.svelte";
 	import MobileCarousel from "$lib/components/fragments/mobileCarousel/MobileCarousel.svelte";
 	import Page from "$lib/components/fragments/Page/Page.svelte";
 
 	import logo from "$lib/assets/logo.png";
 	import logoTransparent from "$lib/assets/building.png";
+	const gotoRegister = () => {
+		// open/goto register page.
+	}
+	const gotoLogin = () => {
+		// open/goto login page.
+	}
 </script>
 
 <Section>
@@ -148,6 +162,10 @@
 		</div>
 		<div class="fore">
 			Apratim is here.
+			<div class="cta">
+				<Button variant="secondary" label="Login" onClick={gotoLogin} size="large" ></Button>
+				<Button variant="primary" label="Register" onClick={gotoRegister} size="large" ></Button>
+			</div>
 		</div>
 		<GoDown />
 	</div>
