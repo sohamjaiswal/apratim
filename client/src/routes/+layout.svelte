@@ -100,6 +100,7 @@
     })
 
 	let blob: HTMLElement;
+	let hi = 10;
 
 	const handleMouseMove = (event: MouseEvent) => {
 		m.x = event.pageX;
