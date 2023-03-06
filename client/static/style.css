@@ -24,6 +24,7 @@
 	--primary: #a374ff;
 	--primary-hover: rgb(152, 101, 253);
 	--heading: #fff;
+	--blob-bg: linear-gradient(45deg, #3023ae 0%, #ff0099 100%);
 	/* color to contrast secondary on bg */
 	--primary-alt: white;
 	--body-background: white;
