@@ -3,20 +3,20 @@
 		&>.sect1 {
 			display: flex;
 			cursor: default;
-			&>.bird {
-				position: absolute;
-				height: 100px;
-				width: 100px;
-				bottom: -100px;
-				left: 50%;
-				transform: translate(-50%, 0);
-				animation: PheonixComingUp 1.5s ease-in forwards;
-				z-index: 100;
-				&>img {
-					width: inherit;
-					height: inherit;
-				}
-			}
+			// &>.bird {
+			// 	position: absolute;
+			// 	height: 100px;
+			// 	width: 100px;
+			// 	bottom: -100px;
+			// 	left: 50%;
+			// 	transform: translate(-50%, 0);
+			// 	animation: PheonixComingUp 1.5s ease-in forwards;
+			// 	z-index: 100;
+			// 	&>img {
+			// 		width: inherit;
+			// 		height: inherit;
+			// 	}
+			// }
 			&>.back {
 				position: absolute;
 				top: 50%;
@@ -145,28 +145,28 @@
 			rotate: 360deg;
 		}
 	}
-	@keyframes PheonixComingUp {
-		0% {
-			bottom: -100px;
-			width: 100px;
-			height: 100px;
-			transform: translate(-50%, 0);
-			opacity: 1;
-			z-index: 100;
-		}
-		99% {
-			opacity: 1;
-			z-index: 100;
-		}
-		100% {
-			bottom: 50%;
-			transform: translate(-50%, 50%);
-			width: 300px;
-			height: 300px;
-			opacity: 0;
-			z-index: -100;
-		}
-	}
+	// @keyframes PheonixComingUp {
+	// 	0% {
+	// 		bottom: -100px;
+	// 		width: 100px;
+	// 		height: 100px;
+	// 		transform: translate(-50%, 0);
+	// 		opacity: 1;
+	// 		z-index: 100;
+	// 	}
+	// 	99% {
+	// 		opacity: 1;
+	// 		z-index: 100;
+	// 	}
+	// 	100% {
+	// 		bottom: 50%;
+	// 		transform: translate(-50%, 50%);
+	// 		width: 300px;
+	// 		height: 300px;
+	// 		opacity: 0;
+	// 		z-index: -100;
+	// 	}
+	// }
 </style>
 
 <!-- Landing Page 🤌 -->
@@ -178,7 +178,7 @@
 	import plat4 from "$lib/assets/sponsors/plat4.png";
 	import plat5 from "$lib/assets/sponsors/plat5.png";
 
-	import flyingPheonix from "$lib/assets/logo animation.gif";
+	// import flyingPheonix from "$lib/assets/logo animation.gif";
 
 	import Section from "$lib/components/ui/Section/Section.svelte";
 	import GoDown from "$lib/components/ui/GoDown/GoDown.svelte";
@@ -200,9 +200,9 @@
 <Section>
 	<div class="container">
 		<div class="sect1">
-			<div class="bird">
+			<!-- <div class="bird">
 				<img src="{flyingPheonix}" alt="Flying Pheonix">
-			</div>
+			</div> -->
 			<div class="back">
 				<img class="logo" src="{logoTransparent}" alt="apratim logo" />
 			</div>
