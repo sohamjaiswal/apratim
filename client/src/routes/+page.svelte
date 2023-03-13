@@ -183,6 +183,7 @@
 	import Section from "$lib/components/ui/Section/Section.svelte";
 	import GoDown from "$lib/components/ui/GoDown/GoDown.svelte";
 	import Button from "$lib/components/ui/Button/Button.svelte";
+	import HomeEvents from "$lib/components/fragments/HomeEvents/HomeEvents.svelte";
 	import Carousel from "$lib/components/fragments/Carousel/Carousel.svelte";
 	import MobileCarousel from "$lib/components/fragments/mobileCarousel/MobileCarousel.svelte";
 	import Page from "$lib/components/fragments/Page/Page.svelte";
@@ -230,6 +231,9 @@
 			</div>
 		</div>
 	</div>
+</Section>
+<Section>
+	<HomeEvents />
 </Section>
 <!-- <Section> -->
 <!-- <div class="carousel">
