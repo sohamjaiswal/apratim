@@ -191,7 +191,7 @@
 	}
 	@media screen and (max-width: 1000px) {
 		.footer {
-			height: 60vh !important;
+			height: 85vh !important;
 		}
 		.content {
 			height: 45vh !important;
@@ -237,6 +237,11 @@
 		}
 	}
 	@media screen and (max-width: 500px) {
+		.logos {
+			&>img {
+				width: 80% !important;
+			}
+		}
 		.socials {
 			flex-direction: column;
 		}
