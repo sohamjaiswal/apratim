@@ -2,6 +2,7 @@
 
     import DevCard from "$lib/components/fragments/DevCard/DevCard.svelte";
 import Page from "$lib/components/fragments/Page/Page.svelte";
+	import Heading from "$lib/components/ui/Heading/Heading.svelte";
     import Section from "$lib/components/ui/Section/Section.svelte";
 	import { SahilDetails } from "$lib/devs/Sahil";
 	import { SohamDetails } from "$lib/devs/Soham";
@@ -11,10 +12,7 @@ import Page from "$lib/components/fragments/Page/Page.svelte";
 <Section>
 	<div class="developers-panel">
 		<div class="header">
-			<h1>
-				Developers 🐵
-			</h1>
-			<hr />
+			<Heading title="Developers" />
 		</div>
 		<div class="devs">
 			<h1>
