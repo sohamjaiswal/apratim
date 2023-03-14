@@ -2,11 +2,12 @@
     export let title: string;
     export let subtitle: string;
     export let desc: string;
+    export let src: string;
 </script>
 
 <div class="card">
     <div class="card__content">
-        <div class="card__front">
+        <div class="card__front" style="background-image: url('{src}');">
             <h3 class="card__title">{title}</h3>
             <p class="card__subtitle">{subtitle}</p>
         </div> 
@@ -19,6 +20,12 @@
 <style lang="scss">
     .card {
         width: 400px;
+	    --clr: #303030;
+        --level-one: translateZ(3rem);
+        --level-two: translateZ(6rem);
+        --level-three: translateZ(9rem);
+        --fw-normal: 400;
+        --fw-bold: 700;
         &>.card__content {
             text-align: center;
             position: relative;
@@ -38,10 +45,9 @@
                 align-content: center;
                 &.card__front {
                     background-color: var(--clr);
-                    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/308367/fair.jpg);
                     background-size: cover;
                     background-blend-mode: overlay;
-                    color: #333;
+                    color: #fff;
                     &::before {
                         content: '';
                         position: absolute;
@@ -71,7 +77,7 @@
                 &.card__back {
                     transform: rotateY(.5turn);
                     color: var(--clr);
-                    background: #333;
+                    background: rgba(255, 255, 255, 0.9);
                     &>.card__body {
                         transform: var(--level-two);
                         font-weight: var(fw-normal);
