@@ -3,6 +3,7 @@
     import DevCard from "$lib/components/fragments/DevCard/DevCard.svelte";
 import Page from "$lib/components/fragments/Page/Page.svelte";
     import Section from "$lib/components/ui/Section/Section.svelte";
+	import { SahilDetails } from "$lib/devs/Sahil";
 	import { SohamDetails } from "$lib/devs/Soham";
 
 </script>
@@ -21,6 +22,7 @@ import Page from "$lib/components/fragments/Page/Page.svelte";
 				<hr />
 			</h1>
 			<div class="many-devs">
+				<DevCard {...SahilDetails} />
 				<DevCard {...SohamDetails} />
 			</div>
 		</div>
