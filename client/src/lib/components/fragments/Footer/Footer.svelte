@@ -1,7 +1,7 @@
 <style lang="scss">
 	.footer {
 		position: relative;
-		height: 65vh;
+		height: 85vh;
 		width: 100vw;
 		background-color: var(--primary);
 		z-index: 1;
@@ -100,6 +100,12 @@
 					}
 				}
 			}
+		}
+		.logos {
+			padding: 0 0 5vh 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 		}
 		&>.underFooter {
 			margin: 0 10vw;
@@ -241,6 +247,7 @@
 	import InstagramIcon from '$lib/assets/socials/instagram.svg';
 	import LinkedInIcon from '$lib/assets/socials/linkedin.svg';
 	import YoutubeIcon from '$lib/assets/socials/youtube.svg';
+	import EkBharat from '$lib/assets/ek-bharat-logo.png';
 	import { onMount } from 'svelte';
 
 	let footer: HTMLElement;
@@ -306,6 +313,9 @@
 				</span>
 			</a>
 		</div>
+	</div>
+	<div class="logos">
+		<img src={EkBharat} alt="Ek Bharat Shreshtha Bharat" />
 	</div>
 	<div class="underFooter">
 		<div class="links">
