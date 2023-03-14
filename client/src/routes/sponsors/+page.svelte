@@ -6,6 +6,7 @@
 	import type { IGlossyCard } from "$lib/types/glossy-card.types";
 
     import {showBlob} from '../store'
+	import Heading from '$lib/components/ui/Heading/Heading.svelte';
 
     const cards: IGlossyCard[] = [
         {
@@ -48,10 +49,8 @@
 
 <Section>
     <div class="heading">
-        <h1>
-            Sponsors
-            <hr />
-        </h1>
+        <Heading title="Sponsors" />
+        <p />
     </div>
     <div class="glossyCardContainer" on:mouseenter="{() => showBlob.update(_ => false)}" on:mouseleave="{() => showBlob.update(_ => true)}">
         <GlossyCards cards={cards} />
